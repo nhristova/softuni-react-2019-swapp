@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'distant-galaxy-regular';
+    src: url('./SfDistantGalaxy-0l3d.ttf');
+}
+
+:root {
+    /* Palette colors */
+    --highlight1: #FFE300;
+    --highlight2: #4BD5EE;
+    --highlight3: #ff6633;
+    --element0: #000;
+    --element1: #333;
+    --element2: #273444;
+    --element3: #3C4858;
+    --element4: #4E5B6E;
+    --element5: #ABB1BA;
+    --element6: #E5E9F2;
+    --element7: #EFF2F7;
+    --element8: #E8EAED;
+    --element9: #FFF;
+    /* Shared */
+    --logo-font-color: var(--highlight1);
+    --error-font-color: var(--highlight3);
+    --login-modal-background-color: var(--element0);
+    --button-hover: var(--highlight3);
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html.light-theme {
+    --default-font-color: var(--element4);
+    --default-background-color: var(--element8);
+    --card-border-color: var(--element6);
+    --card-background-color: var(--element9);
+    --button-solid-background-color: var(--element0);
+    --button-solid-border-color: var(--element6);
+    --button-solid-font-color: var(--highlight1);
+    --button-outline-background: var(--element7);
+    --button-outline-border-color: var(--element6);
+    --button-outline-font-color: inherit;
+    --input-background-color: var(--element7);
+    --input-border-color: var(--element6);
+    --input-font-color: var(--element3);
+    --app-bar-background-color: var(--element0);
+    --app-bar-border-color: var(--element1);
+    --app-bar-font-color: var(--highlight2);
+    --heading-main-font-color: var(--highlight2);
+    --radar-font-color: var(--highlight2);
+    --radar-background-color: var(--element0);
+    --radar-grid: var(--element3);
+}
+
+html.dark-theme {
+    --default-font-color: var(--element5);
+    --default-background-color: var(--element0);
+    --card-border-color: var(--element3);
+    --card-background-color: var(--element1);
+    --button-solid-background-color: var(--highlight2);
+    --button-solid-border-color: none;
+    --button-solid-font-color: var(--highlight1);
+    --button-outline-background: var(--element3);
+    --button-outline-border-color: var(--element1);
+    --button-outline-font-color: inherit;
+    --input-background-color: var(--element9);
+    --input-border-color: var(--element3);
+    --input-font-color: var(--element2);
+    --app-bar-background-color: var(--element1);
+    --app-bar-border-color: var(--element3);
+    --app-bar-font-color: var(--highlight2);
+    --heading-main-font-color: var(--highlight1);
+    --radar-font-color: var(--highlight1);
+    --radar-background-color: var(--element0);
+    --radar-grid: var(--element1);
+}
+
+body {
+    background-color: var(--default-background-color);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.page-heading{
+    color: var(--highlight2);
+}
+
+.login-modal {
+    background-color: var(--login-modal-background-color);
+    padding: 15px;
+}
+
+.login-heading {
+    font-family: 'distant-galaxy-regular';
+    font-size: 5em;
+    color: var(--logo-font-color);
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.login-card {
+    border-radius: 5px;
+    background-color: var(--card-background-color);
+    padding: 5px 15% 5px 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-error-message {
+    color: var(--error-font-color);
+    font-size: 0.8em;
+    margin: 10px 10px 5px 10px;
+}
+
+.login-input {
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    ;
+    background-color: var(--input-background-color);
+    color: var(--input-font-color);
+    display: block;
+    margin: 10px;
+    padding: 8px 15px;
+}
+
+.login-button {
+    align-self: flex-end;
+    background-color: var(--button-solid-background-color);
+    border: 1px solid var(--button-solid-border-color);
+    border-radius: 5px;
+    color: var(--button-solid-font-color);
+    display: block;
+    font-size: 1.3em;
+    font-weight: bold;
+    min-width: 70px;
+    margin: 10px;
+    padding: 8px 25px;
+}
+
+.login-button:hover{
+    background-color: var(--button-hover);
+}
