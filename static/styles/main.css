@@ -78,6 +78,7 @@ html.dark-theme {
 body {
     background-color: var(--default-background-color);
     margin: 0;
+    font-size: 13px;
 }
 
 .hidden {
@@ -86,4 +87,9 @@ body {
 
 .page-heading {
     color: var(--highlight2);
+}
+
+a {
+    color: var(--default-font-color);
+    text-decoration: none;
 }
