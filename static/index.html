@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-theme">
+<html lang="en" class="light-theme">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SWAPP static html</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="actions.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/login.css" />
+    <script src="scripts/actions.js"></script>
 </head>
-<body>
-    <h1 class="page-heading">Login page</h1>
 
+<body>
     <div class="login-modal">
         <h2 class="login-heading" onClick="changeTheme()">SWAPP</h2>
         <div class="login-card">
-            <div id="login-error" class="login-error-message hidden">Should be hidden until check</div>
-            <input class="login-input" type="email" placeholder="email"/>
-            <input class="login-input" type="password" placeholder="password"/>
+            <div id="login-error" class="login-error-message">Should be hidden until check</div>
+            <input class="login-input" type="email" placeholder="email" />
+            <input class="login-input" type="password" placeholder="password" />
             <button onClick="login()" class="login-button">Login</button>
         </div>
     </div>
-
 </body>
+
 </html>
