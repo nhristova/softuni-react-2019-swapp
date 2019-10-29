@@ -1,38 +1,78 @@
-.episode-characters {
+.episode-main {
+    width: 80vw;
+    margin: 20px auto;
+}
+
+.episode-heading {
+    --card-img-width: 200px;
+    --card-title-font-size: 2em;
+    --card-subtitle-font-size: 1.6em;
+    height: var(--card-img-width);
+}
+
+.episode-details {
+    background-color: var(--card-background-color);
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 15px;
+}
+.episode-info-highlight{
+    color: var(--hihglihgt-color);
+}
+
+.episode-character {
+    --card-img-width: 80px;
+    --card-title-font-size: 1.3em;
+    --card-subtitle-font-size: 1em;
+}
+
+.episode-characters-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.episode-poster {
-    max-height: 400px;
+.episode-button {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.character-card {
+.lr-card {
     background-color: var(--card-background-color);
     border: 1px solid var(--card-border-color);
     border-radius: 5px;
     display: flex;
+    flex-basis: 32%;
+    height: var(--card-img-width);
 }
 
-.character-photo {
-    /* width: 80px;
-    height: 80px; */
-}
-
-.character-card img {
+.lr-card-photo img {
+    border-radius: 5px 0 0 5px;
     object-fit: cover;
-    height: 80px;
-    width: 80px;
+    height: 100%;
+    width: var(--card-img-width);
 }
 
-.episode-card {
-    display: flex;
+.lr-card-details {
+    padding: 15px 20px;
+    align-self: center;
+    margin: auto;
+    text-align: center;
 }
 
-.character-name {
+.lr-card-title {
     color: var(--heading-main-font-color);
+    font-size: var(--card-title-font-size);
     font-weight: bold;
-    font-size: 1.3em;
-    padding: 30px;
+}
+
+.lr-card-subtitle {
+    font-size: var(--card-subtitle-font-size);
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 480px) {
+    .episode-main {
+        width: 90vw;
+    }
 }
