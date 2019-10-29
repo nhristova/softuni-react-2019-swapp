@@ -39,20 +39,3 @@
     padding: 8px 15px;
 }
 
-.login-button {
-    align-self: flex-end;
-    background-color: var(--button-solid-background-color);
-    border: 1px solid var(--button-solid-border-color);
-    border-radius: 5px;
-    color: var(--button-solid-font-color);
-    display: block;
-    font-size: 1.3em;
-    font-weight: bold;
-    min-width: 70px;
-    margin: 10px;
-    padding: 8px 25px;
-}
-
-.login-button:hover{
-    background-color: var(--button-hover);
-}

@@ -20,6 +20,7 @@
     --element9: #FFF;
     /* Shared */
     --logo-font-color: var(--highlight1);
+    --hihglihgt-color: var(--highlight2);
     --error-font-color: var(--highlight3);
     --login-modal-background-color: var(--element0);
     --button-hover: var(--highlight3);
@@ -85,11 +86,29 @@ body {
     visibility: hidden;
 }
 
-.page-heading {
-    color: var(--highlight2);
-}
-
 a {
     color: var(--default-font-color);
     text-decoration: none;
+}
+
+p, span {
+    color: var(--default-font-color);
+}
+
+.highlight-button {
+    align-self: flex-end;
+    background-color: var(--button-solid-background-color);
+    border: 1px solid var(--button-solid-border-color);
+    border-radius: 5px;
+    color: var(--button-solid-font-color);
+    display: block;
+    font-size: 1.3em;
+    font-weight: bold;
+    min-width: 70px;
+    margin: 10px;
+    padding: 8px 25px;
+}
+
+.highlight-button:hover {
+    background-color: var(--button-hover);
 }
