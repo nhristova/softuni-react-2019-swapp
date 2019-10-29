@@ -8,6 +8,7 @@
     <title>SWAPP Episode</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <link rel="stylesheet" type="text/css" href="styles/episodes.css" />
+    <link rel="stylesheet" type="text/css" href="styles/episode.css" />
     <script src="scripts/actions.js"></script>
 </head>
 
@@ -19,11 +20,31 @@
             <span><a href="./episodes">Episodes</a></span>
             <span><a href="./characters">Characters</a></span>
             <span class="logout-icon"><a href="./">➡</a></span>
-</span>
+            </span>
         </nav>
     </header>
-    <main class="characters-main">
-        
+    <main class="episode-main">
+        <div class="episode-card">
+            <div class="episode-poster">
+                <img src="./imgs/episode-II-poster.jpg" alt="Poster with Natalie Portman" width="100%">
+            </div>
+            <div class="episode-title">The Phantom Menace</div>
+            <div class="episode-subtitle">Attack of the Clones</div>
+        </div>
+        <div class="episode-details">
+            <div class="episode-synopsis">Two Jedi escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to claim their old glory.
+            </div>
+            <div class="episode-info"></div>
+        </div>
+        <div class="episode-characters">
+            <div class="character-card">
+                <div class="character-photo">
+                    <img src="./imgs/obi-wan.jpeg" alt="Old Obi-Wan Kenobi with lightsaber">
+                </div>
+                <div class="character-name">Obi-Wan Kenobi</div>
+            </div>
+        </div>
+        <button class="load-button">Load more</button>
     </main>
 
     <footer style="display:none">
