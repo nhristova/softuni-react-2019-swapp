@@ -1,0 +1,51 @@
+.page-header {
+    background-color: var(--app-bar-background-color);
+    border: 1px solid var(--app-bar-border-color);
+    color: var(--app-bar-font-color);
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 5px;
+    position: sticky;
+}
+
+.header-logo {
+    color: var(--logo-font-color);
+    font-family: 'distant-galaxy-regular';
+    font-size: 1.3em;
+    padding: 8px;
+}
+
+.header-navigation {
+    align-self: center;
+}
+
+.episodes-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.episode-card {
+    background-color: var(--card-background-color);
+    border-color: var(--card-border-color);
+    border-radius: 5px 5px 0 0;
+    flex: 1 0 21%;
+    margin: 10px;
+}
+
+.episode-poster img{
+    border-radius: 5px 5px 0 0 ;
+}
+
+.episode-title {
+    color: var(--heading-main-font-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.episode-description {
+    
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
