@@ -1,4 +1,3 @@
-
 .login-modal {
     background-color: var(--login-modal-background-color);
     padding: 15px;
@@ -37,5 +36,9 @@
     display: block;
     margin: 10px;
     padding: 8px 15px;
+}
+
+.login-card button {
+    align-self: flex-end;
 }
 

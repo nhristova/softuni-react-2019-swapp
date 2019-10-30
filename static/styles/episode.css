@@ -34,7 +34,7 @@
 
 .episode-button {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .lr-card {

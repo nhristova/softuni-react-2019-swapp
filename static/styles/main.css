@@ -95,8 +95,7 @@ p, span {
     color: var(--default-font-color);
 }
 
-.highlight-button {
-    align-self: flex-end;
+.load-more-button {
     background-color: var(--button-solid-background-color);
     border: 1px solid var(--button-solid-border-color);
     border-radius: 5px;
@@ -109,6 +108,6 @@ p, span {
     padding: 8px 25px;
 }
 
-.highlight-button:hover {
+.load-more-button:hover {
     background-color: var(--button-hover);
 }
