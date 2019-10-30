@@ -3,7 +3,7 @@
     margin: 20px auto;
 }
 
-.episode-heading {
+.episode-card {
     --card-img-width: 200px;
     --card-title-font-size: 2em;
     --card-subtitle-font-size: 1.6em;
@@ -20,13 +20,13 @@
     color: var(--hihglihgt-color);
 }
 
-.episode-character {
+.character-card {
     --card-img-width: 80px;
     --card-title-font-size: 1.3em;
     --card-subtitle-font-size: 1em;
 }
 
-.episode-characters-list {
+.characters-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
