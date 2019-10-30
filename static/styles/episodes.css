@@ -1,30 +1,3 @@
-.page-header {
-    background-color: var(--app-bar-background-color);
-    border: 1px solid var(--app-bar-border-color);
-    color: var(--app-bar-font-color);
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 5px;
-    position: sticky;
-}
-
-.header-logo {
-    color: var(--logo-font-color);
-    font-family: 'distant-galaxy-regular';
-    font-size: 1.3em;
-    padding: 8px;
-}
-
-.header-navigation {
-    align-self: center;
-}
-
-.header-navigation span {
-    padding: 5px;
-    vertical-align: middle;
-}
-
 a {
     color: var(--button-outline-font-color);
 }
@@ -43,7 +16,7 @@ span.logout-icon {
     justify-content: center;
 }
 
-.episode-card {
+.tb-card {
     background-color: var(--card-background-color);
     border: 1px solid var(--card-border-color);
     border-bottom: 8px solid var(--card-background-color);
@@ -72,7 +45,7 @@ span.logout-icon {
 }
 
 @media screen and (max-width: 480px) {
-    .episode-card {
+    .tb-card {
         flex-basis: 80%;
     }
 }
