@@ -7,7 +7,7 @@
     margin: 20px auto;
 }
 
-.episode-card {
+.big-card {
     --card-img-width: 25vw;
     --card-title-font-size: 2em;
     --card-subtitle-font-size: 1.6em;
@@ -25,7 +25,7 @@
     color: var(--hihglihgt-color);
 }
 
-.character-card {
+.small-card {
     --card-img-width: 80px;
     --card-title-font-size: 1.3em;
     --card-subtitle-font-size: 1em;
@@ -73,13 +73,13 @@
 }
 
 @media screen and (max-width: 530px) {
-    .episode-card .lr-card-photo {
+    .big-card .lr-card-photo {
         height: initial;
     }
     .episode-main {
         width: 90vw;
     }
-    .character-card {
+    .small-card {
         max-width: 100%;
     }
 }
@@ -88,13 +88,13 @@
     .episode-main {
         width: 90vw;
     }
-    .character-card {
+    .small-card {
         max-width: 45%;
     }
 }
 
 @media screen and (min-width: 790px) {
-    .episode-card {
+    .big-card {
         --card-img-width: 40vw;
     }
     .lr-card-photo {
