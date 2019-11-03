@@ -26,18 +26,18 @@ span.logout-icon {
     overflow: hidden;
 }
 
-.episode-poster img {
+.tb-card-photo img {
     border-radius: 5px 5px 0 0;
 }
 
-.episode-title {
+.tb-card-title {
     color: var(--heading-main-font-color);
     font-size: 1.2em;
     font-weight: bold;
     padding: 15px 10px;
 }
 
-.episode-description {
+.tb-card-description {
     padding: 0 10px;
     display: -webkit-box;
     -webkit-line-clamp: 7;

@@ -7,7 +7,7 @@
     margin: 20px auto;
 }
 
-.big-card {
+.big-lr-card {
     --card-img-width: 25vw;
     --card-title-font-size: 2em;
     --card-subtitle-font-size: 1.6em;
@@ -21,11 +21,11 @@
     padding: 15px;
 }
 
-.episode-info-highlight {
+.description-highlight {
     color: var(--hihglihgt-color);
 }
 
-.small-card {
+.small-lr-card {
     --card-img-width: 80px;
     --card-title-font-size: 1.3em;
     --card-subtitle-font-size: 1em;
@@ -73,13 +73,13 @@
 }
 
 @media screen and (max-width: 530px) {
-    .big-card .lr-card-photo {
+    .big-lr-card .lr-card-photo {
         height: initial;
     }
     .episode-main {
         width: 90vw;
     }
-    .small-card {
+    .small-lr-card {
         max-width: 100%;
     }
 }
@@ -88,13 +88,13 @@
     .episode-main {
         width: 90vw;
     }
-    .small-card {
+    .small-lr-card {
         max-width: 45%;
     }
 }
 
 @media screen and (min-width: 790px) {
-    .big-card {
+    .big-lr-card {
         --card-img-width: 40vw;
     }
     .lr-card-photo {
