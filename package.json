@@ -9,11 +9,11 @@
         "eject": "react-scripts eject",
         "lint": "eslint src",
         "format": "prettier --write src/**/*.{js,json,css,sccs}",
-        "ci": "npm run lint && npm run format && set CI=true && npm test -- --coverage"
+        "ci": "npm run lint && cross-env CI=true && npm test -- --coverage"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "set CI=true lint-staged"
+            "pre-commit": "cross-env CI=true lint-staged"
         }
     },
     "lint-staged": {
