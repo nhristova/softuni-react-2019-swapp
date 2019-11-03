@@ -29,39 +29,50 @@
 
 /* Character profile page */
 
-.character-main {
+.character-main, .starship-main {
     width: 90vw;
     margin: 0 auto;
 }
 
-.character-title {
+.page-title {
     text-align: center;
     border-bottom: 1pt solid var(--app-bar-background-color);
     margin:10px;
     padding: 20px;
 }
 
-.character-content {
+.page-title-1 {
+    font-size: 2em;
+}
+.page-title-2 {    
+    font-size: 1.6em;
+}
+.page-title-3 {
+    font-size: 1.4em;
+}
+
+.page-content {
     display: flex;
 }
-.character-column {
-    flex-basis: 50%;
+.page-column-half {
+    flex: 0 0 50%;
     padding: 0 15px;
 }
 
-.character-column .tb-card-title {
+.page-column-half .tb-card-title {
     text-align: center;
 }
 
+/* Starship page */
 
-.starships-list-title.heading-sub{
-    color: var(--subtitle-font-color);
-    font-size: 1.9em;
+.column-title.heading-starwars {
     text-align: center;
     border-bottom: 1pt solid var(--subtitle-font-color);
     padding-bottom: 10px;
     margin: 35px 0 15px 0;
 }
+
+
 
 /* LR Card */
 
@@ -128,19 +139,28 @@
     .small-lr-card {
         max-width: 100%;
     }
+    .page-content {
+        flex-direction: column;
+    }
 }
 
 @media screen and (min-width: 531px) and (max-width: 790px) {
-    .episode-main {
+    .episode-main, .starship-main, .character-main {
         width: 90vw;
     }
     .small-lr-card {
         max-width: 45%;
     }
+    .page-content {
+        flex-direction: column;
+    }
+    .big-lr-card {
+        --card-img-width: 100%;
+    }
 }
 
 @media screen and (min-width: 791px) {
-    .episode-main {
+    .episode-main, .starship-main, .character-main {
         width: 75vw;
     }
     .big-lr-card {
@@ -152,7 +172,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .episode-main {
+    .episode-main, .starship-main, .character-main {
         width: 800px;
     }
     .big-lr-card {

@@ -32,6 +32,7 @@
 
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--default-font-color);
 }
 
 html.light-theme {
@@ -95,11 +96,6 @@ a {
     text-decoration: none;
 }
 
-p,
-span {
-    color: var(--default-font-color);
-}
-
 .page-header {
     background-color: var(--app-bar-background-color);
     border: 1px solid var(--app-bar-border-color);
@@ -144,15 +140,7 @@ span {
     background-color: var(--button-hover);
 }
 
-.heading-page {
-    color: var(--heading-main-font-color);
-    font-family: 'starwars-regular';
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.heading-sub {
-    color: var(--heading-main-font-color);
+.heading-starwars {
     font-family: 'starwars-regular';
     font-weight: bold;
 }
