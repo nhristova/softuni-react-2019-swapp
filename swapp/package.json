@@ -4,8 +4,9 @@
     "private": true,
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build",
+        "build": "npm run format && npm run test:all && react-scripts build",
         "test": "react-scripts test",
+        "test:all": "set CI=true&&npm test -- --coverage",
         "eject": "react-scripts eject",
         "format": "prettier --write src/**/*.{js,json,css,sccs}"
     },
@@ -49,8 +50,18 @@
         "src/**/*.js": [
             "prettier --write",
             "eslint --max-warnings=0",
-            "yarn test --bail --findRelatedTests",
+            "npm test --bail --findRelatedTests",
             "git add"
         ]
+    },
+    "jest": {
+        "coverageThreshold": {
+            "global": {
+                "branches": 80,
+                "functions": 80,
+                "lines": 80,
+                "statements": -10
+            }
+        }
     }
 }
