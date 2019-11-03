@@ -16,25 +16,31 @@ span.logout-icon {
     justify-content: center;
 }
 
+.episode-card {
+    flex-basis: 25%;
+}
+
+
+/* TB Card */
+
 .tb-card {
     background-color: var(--card-background-color);
     border: 1px solid var(--card-border-color);
     border-bottom: 8px solid var(--card-background-color);
-    border-radius: 5px;
-    flex-basis: 25%;
+    border-radius: 7px;
     margin: 15px 20px;
     overflow: hidden;
 }
 
 .tb-card-photo img {
-    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+    height: var(--card-img-width);
+    width: 100%;
 }
 
-.tb-card-title {
-    color: var(--heading-main-font-color);
-    font-size: 1.2em;
-    font-weight: bold;
+.tb-card-title{
     padding: 15px 10px;
+    font-size: 1.3em;
 }
 
 .tb-card-description {
@@ -42,6 +48,10 @@ span.logout-icon {
     display: -webkit-box;
     -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
+}
+
+.tb-card-details {
+    padding: 10px;
 }
 
 @media screen and (max-width: 480px) {

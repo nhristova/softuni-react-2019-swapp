@@ -1,17 +1,8 @@
+/* Episode profile page */
+
 .episode-main {
     width: 80vw;
     margin: 20px auto;
-}
-.characters-main {
-    width: 95vw;
-    margin: 20px auto;
-}
-
-.big-lr-card {
-    --card-img-width: 25vw;
-    --card-title-font-size: 2em;
-    --card-subtitle-font-size: 1.6em;
-    max-width: 100%;
 }
 
 .episode-details {
@@ -21,8 +12,64 @@
     padding: 15px;
 }
 
-.description-highlight {
-    color: var(--hihglihgt-color);
+
+/* Characters list page */
+
+.characters-main {
+    width: 95vw;
+    margin: 20px auto;
+}
+
+.characters-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* Character profile page */
+
+.character-main {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.character-title {
+    text-align: center;
+    border-bottom: 1pt solid var(--app-bar-background-color);
+    margin:10px;
+    padding: 20px;
+}
+
+.character-content {
+    display: flex;
+}
+.character-column {
+    flex-basis: 50%;
+    padding: 0 15px;
+}
+
+.character-column .tb-card-title {
+    text-align: center;
+}
+
+
+.starships-list-title.heading-sub{
+    color: var(--subtitle-font-color);
+    font-size: 1.9em;
+    text-align: center;
+    border-bottom: 1pt solid var(--subtitle-font-color);
+    padding-bottom: 10px;
+    margin: 35px 0 15px 0;
+}
+
+/* LR Card */
+
+.tiny-lr-card {
+    --card-img-width: 60px;
+    --card-title-font-size: 1.3em;
+    --card-subtitle-font-size: 1em;
+    max-width: 100%;
 }
 
 .small-lr-card {
@@ -32,10 +79,11 @@
     max-width: 32%;
 }
 
-.characters-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.big-lr-card {
+    --card-img-width: 25vw;
+    --card-title-font-size: 2em;
+    --card-subtitle-font-size: 1.6em;
+    max-width: 100%;
 }
 
 .lr-card {
@@ -62,9 +110,7 @@
 }
 
 .lr-card-title {
-    color: var(--heading-main-font-color);
     font-size: var(--card-title-font-size);
-    font-weight: bold;
 }
 
 .lr-card-subtitle {
@@ -84,7 +130,7 @@
     }
 }
 
-@media screen and (min-width: 530px) and (max-width: 790px) {
+@media screen and (min-width: 531px) and (max-width: 790px) {
     .episode-main {
         width: 90vw;
     }
@@ -93,11 +139,23 @@
     }
 }
 
-@media screen and (min-width: 790px) {
+@media screen and (min-width: 791px) {
+    .episode-main {
+        width: 75vw;
+    }
     .big-lr-card {
         --card-img-width: 40vw;
     }
     .lr-card-photo {
         max-height: 200px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .episode-main {
+        width: 800px;
+    }
+    .big-lr-card {
+        --card-img-width: 300px;
     }
 }

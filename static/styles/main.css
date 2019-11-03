@@ -24,7 +24,7 @@
     --element9: #FFF;
     /* Shared */
     --logo-font-color: var(--highlight1);
-    --hihglihgt-color: var(--highlight2);
+    --highlight-color: var(--highlight2);
     --error-font-color: var(--highlight3);
     --login-modal-background-color: var(--element0);
     --button-hover: var(--highlight3);
@@ -52,7 +52,7 @@ html.light-theme {
     --app-bar-border-color: var(--element1);
     --app-bar-font-color: var(--highlight2);
     --heading-main-font-color: var(--highlight2);
-    --radar-font-color: var(--highlight2);
+    --subtitle-font-color: var(--default-font-color);
     --radar-background-color: var(--element0);
     --radar-grid: var(--element3);
 }
@@ -75,7 +75,7 @@ html.dark-theme {
     --app-bar-border-color: var(--element3);
     --app-bar-font-color: var(--highlight2);
     --heading-main-font-color: var(--highlight1);
-    --radar-font-color: var(--highlight1);
+    --subtitle-font-color: var(--highlight2);
     --radar-background-color: var(--element0);
     --radar-grid: var(--element1);
 }
@@ -142,4 +142,25 @@ span {
 
 .load-more-button:hover {
     background-color: var(--button-hover);
+}
+
+.heading-page {
+    color: var(--heading-main-font-color);
+    font-family: 'starwars-regular';
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.heading-sub {
+    color: var(--heading-main-font-color);
+    font-family: 'starwars-regular';
+    font-weight: bold;
+}
+
+.text-highlight {
+    color: var(--heading-main-font-color);
+}
+
+.text-highlight-2 {
+    color: var(--subtitle-font-color);
 }
