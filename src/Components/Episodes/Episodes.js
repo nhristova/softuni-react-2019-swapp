@@ -10,20 +10,20 @@ export default class Episodes extends React.Component {
 
   render() {
     return (
-      <main class="episodes-main">
-        <div class="episode-card tb-card">
-          <div class="tb-card-photo">
+      <main className="episodes-main">
+        <div className="episode-card tb-card">
+          <div className="tb-card-photo">
             <img
               src="./imgs/episode-II-poster.jpg"
               alt="Poster with Natalie Portman"
             />
           </div>
-          <div class="tb-card-title">
-            <a class="heading-starwars text-highlight " href="./episode">
+          <div className="tb-card-title">
+            <a className="heading-starwars text-highlight " href="./episode">
               The Phantom Menace
             </a>
           </div>
-          <div class="tb-card-description">
+          <div className="tb-card-description">
             Two Jedi escape a hostile blockade to find allies and come across a
             young boy who may bring balance to the Force, but the long dormant
             Sith resurface to claim their old glory. Two Jedi escape a hostile

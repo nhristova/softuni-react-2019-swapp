@@ -9,18 +9,19 @@
         "eject": "react-scripts eject",
         "lint": "eslint src",
         "format": "prettier --write src/**/*.{js,json,css,sccs}",
-        "ci": "npm run lint && cross-env CI=true npm run test --coverage"
+        "ci": "npm run lint && cross-env CI=true npm run test --coverage",
+        "test:all": "npm run lint && npm run format && set CI=true && npm test -- --coverage"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "cross-env CI=true lint-staged"
+            "pre-commit": "set CI=true lint-staged"
         }
     },
     "lint-staged": {
         "src/**/*.js": [
             "prettier --write",
             "eslint --max-warnings=0",
-            "npm run test --bail --findRelatedTests",
+            "npm run test --bail",
             "git add"
         ]
     },
