@@ -1,10 +1,10 @@
-import { React } from 'react';
+import React from 'react';
 
-export class Login extends React.Component {
+export default class Login extends React.Component {
   render() {
     return (
       <div class="login-modal">
-        <h2 class="login-heading" onClick="changeTheme()">
+        <h2 class="login-heading" onClick="">
           SWAPP
         </h2>
         <div class="login-card">
