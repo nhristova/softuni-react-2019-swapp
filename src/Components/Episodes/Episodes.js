@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Episodes extends React.Component {
+export class Episodes extends React.Component {
   episode = {
     title: 'The Phantom Menace',
     description:

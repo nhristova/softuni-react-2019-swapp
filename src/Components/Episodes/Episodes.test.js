@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import Episodes from './Episodes';
+import { Episodes } from './Episodes';
 
 describe('Login component', () => {
   it('Renders without crashing', () => {
