@@ -1,17 +1,21 @@
-import { Login } from './Login';
 import { Episodes } from './Episodes';
 
 export const pages = [
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-  },
+  // {
+  //   path: '/login',
+  //   name: 'Login',
+  //   component: Login,
+  // },
   {
     path: '/episodes',
     name: 'Episodes',
     component: Episodes,
   },
+  {
+    path: '/',
+    name: 'Home',
+    component: Episodes
+  }
   // {
   //     path: '/characters',
   //     name: 'Characters',
