@@ -1,9 +1,9 @@
-import React  from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 export const Login = props => {
   if (props.isLogged) {
-    return <Redirect to="/episodes" />
+    return <Redirect to="/episodes" />;
   }
 
   return (
@@ -12,15 +12,13 @@ export const Login = props => {
       <div className="login-card">
         <div id="login-error" className="login-error-message">
           Should be hidden until check
-          </div>
+        </div>
         <input className="login-input" type="email" placeholder="email" />
-        <input
-          className="login-input"
-          type="password"
-          placeholder="password"
-        />
-        <button className="load-more-button" onClick={props.login}>Login</button>
+        <input className="login-input" type="password" placeholder="password" />
+        <button className="load-more-button" onClick={props.login}>
+          Login
+        </button>
       </div>
     </div>
   );
-}
+};
