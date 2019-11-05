@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { Redirect } from 'react-router-dom';
 
 export const Login = props => {
-  let [shouldRedirect, setShouldRedirect] = useState(false);
-
-  //  const login = () => authenticate(() => setShouldRedirect(true));
-  const login = () => setShouldRedirect(true);
-
-  if (shouldRedirect) {
+  if (props.isLogged) {
     return <Redirect to="/episodes" />
   }
 
@@ -24,7 +19,7 @@ export const Login = props => {
           type="password"
           placeholder="password"
         />
-        <button className="load-more-button" onClick={login}>Login</button>
+        <button className="load-more-button" onClick={props.login}>Login</button>
       </div>
     </div>
   );

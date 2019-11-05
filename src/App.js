@@ -9,9 +9,8 @@ function App() {
   let [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const toggleAuthenticated = () => {
-    console.log(`toggle-ing isAuthenticated from ${isAuthenticated}`);
     setIsAuthenticated(!isAuthenticated);
-    console.log(`isAuthenticated is now ${isAuthenticated}`);
+    console.log(`isAuthenticated will toggle from ${isAuthenticated}`);
   };
 
 
@@ -22,8 +21,10 @@ function App() {
         {/* <Appbar navs={demos} /> */}
         <div className="container">
           <Switch>
-            <Route path="/login" component={Login} />
-            
+            <Route path="/login"
+              render={() => <Login isLogged={isAuthenticated} login={toggleAuthenticated} />}
+            />
+
             {pages.map(({ path, component }) => (
               isAuthenticated
                 ? <Route path={path} key={path} component={component} />
