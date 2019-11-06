@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import { pages, Login, Header } from './Components';
 
+/* istanbul ignore next*/
 function App() {
   let [isAuthenticated, setIsAuthenticated] = useState(false);
   let [theme, setTheme] = useState('light-theme');
@@ -25,21 +26,25 @@ function App() {
 
   return (
     <div className="App">
+      {isAuthenticated && (
+        <Header changeTheme={toggleTheme} logout={toggleAuthenticated} />
+      )}
       <BrowserRouter>
-        {isAuthenticated && (
-          <Header changeTheme={toggleTheme} logout={toggleAuthenticated} />
-        )}
         <Switch>
           <Route path="/login">
-            <Login isLogged={isAuthenticated} login={toggleAuthenticated} changeTheme={toggleTheme} />
+            <Login
+              isLogged={isAuthenticated}
+              login={toggleAuthenticated}
+              changeTheme={toggleTheme}
+            />
           </Route>
 
           {pages.map(({ path, component }) =>
             isAuthenticated ? (
               <Route path={path} key={path} component={component} />
             ) : (
-                <Redirect to="/login" key={path} />
-              ),
+              <Redirect to="/login" key={path} />
+            ),
           )}
 
           <Redirect from="/" to="/episodes" />
