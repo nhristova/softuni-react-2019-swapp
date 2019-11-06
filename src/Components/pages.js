@@ -14,8 +14,8 @@ export const pages = [
   {
     path: '/',
     name: 'Home',
-    component: Episodes
-  }
+    component: Episodes,
+  },
   // {
   //     path: '/characters',
   //     name: 'Characters',

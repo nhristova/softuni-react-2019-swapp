@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-import { pages, Login } from './Components';
-import {} from './Components';
+import { pages, Login, Header } from './Components';
 
 function App() {
   let [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -27,9 +26,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <div className="navigation" onClick={toggleTheme}>
-          NAVBAR BE HERE
-        </div>
+        {isAuthenticated && (
+          <Header changeTheme={toggleTheme} logout={toggleAuthenticated} />
+        )}
         {/* <Appbar navs={demos} /> */}
         <div className="container">
           <Switch>
