@@ -1,4 +1,5 @@
 import { Episodes } from './Episodes';
+import { Characters } from './Characters';
 
 export const pages = [
   // {
@@ -12,15 +13,10 @@ export const pages = [
     component: Episodes,
   },
   {
-    path: '/',
-    name: 'Home',
-    component: Episodes,
+      path: '/characters',
+      name: 'Characters',
+      component: Characters
   },
-  // {
-  //     path: '/characters',
-  //     name: 'Characters',
-  //     component: Characters
-  // },
   // {
   //     path: '/starships',
   //     name: 'Starships',

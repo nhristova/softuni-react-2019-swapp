@@ -8,7 +8,7 @@ export const Login = props => {
 
   return (
     <div className="login-modal">
-      <h2 className="login-heading">SWAPP</h2>
+      <h2 className="login-heading" onClick={props.changeTheme}>SWAPP</h2>
       <div className="login-card">
         <div id="login-error" className="login-error-message">
           Should be hidden until check

@@ -29,25 +29,21 @@ function App() {
         {isAuthenticated && (
           <Header changeTheme={toggleTheme} logout={toggleAuthenticated} />
         )}
-        {/* <Appbar navs={demos} /> */}
-        <div className="container">
-          <Switch>
-            <Route
-              path="/login"
-              render={() => (
-                <Login isLogged={isAuthenticated} login={toggleAuthenticated} />
-              )}
-            />
+        <Switch>
+          <Route path="/login">
+            <Login isLogged={isAuthenticated} login={toggleAuthenticated} changeTheme={toggleTheme} />
+          </Route>
 
-            {pages.map(({ path, component }) =>
-              isAuthenticated ? (
-                <Route path={path} key={path} component={component} />
-              ) : (
+          {pages.map(({ path, component }) =>
+            isAuthenticated ? (
+              <Route path={path} key={path} component={component} />
+            ) : (
                 <Redirect to="/login" key={path} />
               ),
-            )}
-          </Switch>
-        </div>
+          )}
+
+          <Redirect from="/" to="/episodes" />
+        </Switch>
       </BrowserRouter>
     </div>
   );
