@@ -1,22 +1,447 @@
-.App {
-    text-align: center;
+/* @font-face kit by Fonts2u (https://fonts2u.com) */
+/* 
+@font-face {
+  font-family: "starwars-regular";
+  src: url("STARWARS.eot?") format("eot"), url("STARWARS.woff") format("woff"), url("STARWARS.ttf") format("truetype"), url("STARWARS.svg#STARWARS") format("svg");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+:root {
+  /* Palette colors */
+  --highlight1: #ffe300;
+  --highlight2: #4bd5ee;
+  --highlight3: #ff6633;
+  --element0: #000;
+  --element1: #333;
+  --element2: #273444;
+  --element3: #3c4858;
+  --element4: #4e5b6e;
+  --element5: #abb1ba;
+  --element6: #e5e9f2;
+  --element7: #eff2f7;
+  --element8: #e8eaed;
+  --element9: #fff;
+  /* Shared */
+  --logo-font-color: var(--highlight1);
+  --highlight-color: var(--highlight2);
+  --error-font-color: var(--highlight3);
+  --login-modal-background-color: var(--element0);
+  --button-hover: var(--highlight3);
 }
 
-.App-logo {
-    height: 40vmin;
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--default-font-color);
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
+body.light-theme {
+  --default-font-color: var(--element4);
+  --default-background-color: var(--element8);
+  --card-border-color: var(--element6);
+  --card-background-color: var(--element9);
+  --button-solid-background-color: var(--element0);
+  --button-solid-border-color: var(--element6);
+  --button-solid-font-color: var(--highlight1);
+  --button-outline-background: var(--element7);
+  --button-outline-border-color: var(--element6);
+  --button-outline-font-color: inherit;
+  --input-background-color: var(--element7);
+  --input-border-color: var(--element6);
+  --input-font-color: var(--element3);
+  --app-bar-background-color: var(--element0);
+  --app-bar-border-color: var(--element1);
+  --app-bar-font-color: var(--highlight2);
+  --heading-main-font-color: var(--highlight2);
+  --subtitle-font-color: var(--default-font-color);
+  --radar-background-color: var(--element0);
+  --radar-grid: var(--element3);
+}
+
+body.dark-theme {
+  --default-font-color: var(--element5);
+  --default-background-color: var(--element0);
+  --card-border-color: var(--element3);
+  --card-background-color: var(--element1);
+  --button-solid-background-color: var(--highlight2);
+  --button-solid-border-color: none;
+  --button-solid-font-color: var(--highlight1);
+  --button-outline-background: var(--element3);
+  --button-outline-border-color: var(--element1);
+  --button-outline-font-color: inherit;
+  --input-background-color: var(--element9);
+  --input-border-color: var(--element3);
+  --input-font-color: var(--element2);
+  --app-bar-background-color: var(--element1);
+  --app-bar-border-color: var(--element3);
+  --app-bar-font-color: var(--highlight2);
+  --heading-main-font-color: var(--highlight1);
+  --subtitle-font-color: var(--highlight2);
+  --radar-background-color: var(--element0);
+  --radar-grid: var(--element1);
+}
+
+body {
+  background-color: var(--default-background-color);
+  margin: 0;
+  font-size: 13px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+a {
+  color: var(--default-font-color);
+  text-decoration: none;
+}
+
+.page-header {
+  background-color: var(--app-bar-background-color);
+  border: 1px solid var(--app-bar-border-color);
+  color: var(--app-bar-font-color);
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 5px;
+  position: sticky;
+}
+
+.header-logo {
+  color: var(--logo-font-color);
+  font-family: 'starwars-regular';
+  font-size: 1.3em;
+  padding: 8px;
+}
+
+.header-navigation {
+  align-self: center;
+}
+
+.header-navigation span {
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.load-more-button {
+  background-color: var(--button-solid-background-color);
+  border: 1px solid var(--button-solid-border-color);
+  border-radius: 5px;
+  color: var(--button-solid-font-color);
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+  min-width: 70px;
+  margin: 10px auto;
+  padding: 8px 25px;
+}
+
+.load-more-button:hover {
+  background-color: var(--button-hover);
+}
+
+.heading-starwars {
+  font-family: 'starwars-regular';
+  font-weight: bold;
+}
+
+.text-highlight {
+  color: var(--heading-main-font-color);
+}
+
+.text-highlight-2 {
+  color: var(--subtitle-font-color);
+}
+
+/* Login */
+.login-modal {
+  background-color: var(--login-modal-background-color);
+  padding: 15px;
+  margin: 50px;
+}
+
+.login-heading {
+  font-family: 'starwars-regular';
+  font-size: 5em;
+  color: var(--logo-font-color);
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.login-card {
+  border-radius: 5px;
+  background-color: var(--card-background-color);
+  padding: 5px 15% 5px 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-error-message {
+  color: var(--error-font-color);
+  font-size: 0.8em;
+  margin: 10px 10px 5px 10px;
+}
+
+.login-input {
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  background-color: var(--input-background-color);
+  color: var(--input-font-color);
+  display: block;
+  margin: 10px;
+  padding: 8px 15px;
+}
+
+.login-card button {
+  align-self: flex-end;
+}
+
+/* Card TB */
+a {
+  color: var(--button-outline-font-color);
+}
+
+span.logout-icon {
+  color: var(--button-outline-font-color);
+  background-color: var(--button-outline-background);
+  border-radius: 2px;
+  border: 1px solid var(--button-outline-border-color);
+  padding: 2px;
+}
+
+.episodes-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.episode-card {
+  flex-basis: 25%;
+}
+
+/* TB Card */
+
+.tb-card {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-bottom: 8px solid var(--card-background-color);
+  border-radius: 7px;
+  margin: 15px 20px;
+  overflow: hidden;
+}
+
+.tb-card-photo img {
+  object-fit: cover;
+  height: var(--card-img-width);
+  width: 100%;
+}
+
+.tb-card-title {
+  padding: 15px 10px;
+  font-size: 1.3em;
+}
+
+.tb-card-description {
+  padding: 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.tb-card-details {
+  padding: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .tb-card {
+    flex-basis: 80%;
+  }
+}
+
+/* Card LR */
+/* Episode profile page */
+
+.episode-main {
+  width: 80vw;
+  margin: 20px auto;
+}
+
+.episode-details {
+  background-color: var(--card-background-color);
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 15px;
+}
+
+/* Characters list page */
+
+.characters-main {
+  width: 95vw;
+  margin: 20px auto;
+}
+
+.characters-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Character profile page */
+
+.character-main,
+.starship-main {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.page-title {
+  text-align: center;
+  border-bottom: 1pt solid var(--app-bar-background-color);
+  margin: 10px;
+  padding: 20px;
+}
+
+.page-title-1 {
+  font-size: 2em;
+}
+.page-title-2 {
+  font-size: 1.6em;
+}
+.page-title-3 {
+  font-size: 1.4em;
+}
+
+.page-content {
+  display: flex;
+}
+.page-column-half {
+  flex: 0 0 50%;
+  padding: 0 15px;
+}
+
+.page-column-half .tb-card-title {
+  text-align: center;
+}
+
+/* Starship page */
+
+.column-title.heading-starwars {
+  text-align: center;
+  border-bottom: 1pt solid var(--subtitle-font-color);
+  padding-bottom: 10px;
+  margin: 35px 0 15px 0;
+}
+
+/* LR Card */
+
+.tiny-lr-card {
+  --card-img-width: 60px;
+  --card-title-font-size: 1.3em;
+  --card-subtitle-font-size: 1em;
+  max-width: 100%;
+}
+
+.small-lr-card {
+  --card-img-width: 80px;
+  --card-title-font-size: 1.3em;
+  --card-subtitle-font-size: 1em;
+  max-width: 32%;
+}
+
+.big-lr-card {
+  --card-img-width: 25vw;
+  --card-title-font-size: 2em;
+  --card-subtitle-font-size: 1.6em;
+  max-width: 100%;
+}
+
+.lr-card {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 5px;
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.lr-card-photo {
+  border-radius: 5px 0 0 5px;
+  object-fit: cover;
+  height: var(--card-img-width);
+  width: var(--card-img-width);
+}
+
+.lr-card-details {
+  padding: 15px 20px;
+  align-self: center;
+  margin: auto;
+  text-align: center;
+}
+
+.lr-card-title {
+  font-size: var(--card-title-font-size);
+}
+
+.lr-card-subtitle {
+  font-size: var(--card-subtitle-font-size);
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 530px) {
+  .big-lr-card .lr-card-photo {
+    height: initial;
+  }
+  .episode-main {
+    width: 90vw;
+  }
+  .small-lr-card {
+    max-width: 100%;
+  }
+  .page-content {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  }
 }
 
-.App-link {
-    color: #09d3ac;
+@media screen and (min-width: 531px) and (max-width: 790px) {
+  .episode-main,
+  .starship-main,
+  .character-main {
+    width: 90vw;
+  }
+  .small-lr-card {
+    max-width: 45%;
+  }
+  .page-content {
+    flex-direction: column;
+  }
+  .big-lr-card {
+    --card-img-width: 100%;
+  }
+}
+
+@media screen and (min-width: 791px) {
+  .episode-main,
+  .starship-main,
+  .character-main {
+    width: 75vw;
+  }
+  .big-lr-card {
+    --card-img-width: 40vw;
+  }
+  .lr-card-photo {
+    max-height: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .episode-main,
+  .starship-main,
+  .character-main {
+    width: 800px;
+  }
+  .big-lr-card {
+    --card-img-width: 300px;
+  }
 }

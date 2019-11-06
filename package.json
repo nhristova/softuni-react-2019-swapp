@@ -9,29 +9,31 @@
         "eject": "react-scripts eject",
         "lint": "eslint src",
         "format": "prettier --write src/**/*.{js,json,css,sccs}",
-        "ci": "npm run lint && cross-env CI=true npm run test --coverage"
+        "ci": "npm run lint && cross-env CI=true npm run test --coverage",
+        "test:all": "npm run lint && npm run format && set CI=true && npm test -- --coverage && npm run build"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "cross-env CI=true lint-staged"
+            "pre-commit": "set CI=true lint-staged"
         }
     },
     "lint-staged": {
         "src/**/*.js": [
             "prettier --write",
             "eslint --max-warnings=0",
-            "yarn test --bail --findRelatedTests",
+            "npm run test --bail --findRelatedTests",
             "git add"
         ]
     },
     "dependencies": {
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
+        "react-router-dom": "^5.1.2",
         "react-scripts": "3.2.0"
     },
     "devDependencies": {
         "cross-env": "^6.0.3",
-        "husky": "^3.0.9",
+        "husky": "^4.0.0-beta.5",
         "lint-staged": "^9.4.2"
     },
     "eslintConfig": {
@@ -51,7 +53,7 @@
     },
     "prettier": {
         "trailingComma": "all",
-        "tabWidth": 4,
+        "tabWidth": 2,
         "semi": true,
         "singleQuote": true
     },
