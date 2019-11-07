@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
-import { Pages, Login } from './Components';
+import { Pages, Login } from './components';
 
 export const AUTHENTICATED_QUERY = gql`
   query IsAuthenticated {
