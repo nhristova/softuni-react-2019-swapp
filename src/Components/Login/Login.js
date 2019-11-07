@@ -28,6 +28,7 @@ export const Login = props => {
     // Show loader
   }
   if (error) {
+    // TODO: Handle expired token
     showError = true;
   };
 
