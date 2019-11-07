@@ -1,38 +1,53 @@
 import React from 'react';
+import gql from 'graphql-tag.macro';
+import { useQuery } from '@apollo/react-hooks';
 
-export class Episodes extends React.Component {
-  episode = {
-    title: 'The Phantom Menace',
-    description:
-      'Two Jedi escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to claim their old glory. Two Jedi escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to claim their old glory. but the long dormant Sith resurface to claim their old glory',
-    img: './imgs/episode-II-poster.jpg',
-  };
-
-  render() {
-    return (
-      <main className="episodes-main">
-        <div className="episode-card tb-card">
-          <div className="tb-card-photo">
-            <img
-              src="./imgs/episode-II-poster.jpg"
-              alt="Poster with Natalie Portman"
-            />
-          </div>
-          <div className="tb-card-title">
-            <a className="heading-starwars text-highlight " href="./episode">
-              The Phantom Menace
-            </a>
-          </div>
-          <div className="tb-card-description">
-            Two Jedi escape a hostile blockade to find allies and come across a
-            young boy who may bring balance to the Force, but the long dormant
-            Sith resurface to claim their old glory. Two Jedi escape a hostile
-            blockade to find allies and come across a young boy who may bring
-            balance to the Force, but the long dormant Sith resurface to claim
-            their old glory.
-          </div>
-        </div>
-      </main>
-    );
+const EPISODES_QUERY = gql`
+  query{
+    allEpisodes(first: 100){
+      edges{
+        node{
+          id
+          title
+          episodeId
+          image    
+          openingCrawl
+        }
+      }
+    }
   }
+`;
+
+export const Episodes = () => {
+  const { data, loading, error } = useQuery(EPISODES_QUERY);
+  if (loading) return <div>Loading</div>;
+  if (error) return <p>Error on getting all cars</p>;
+
+  const {
+    allEpisodes: { edges }
+  } = data;
+
+  return (
+    <main className="episodes-main">
+      {edges.map(ed => <EpisodeTBCard episode={ed.node} key={Math.random()} />)}
+    </main>
+  );
+};
+
+export const EpisodeTBCard = (prop) => {
+  const episode = prop.episode;
+  return (
+    <div className="episode-card tb-card">
+      <div className="tb-card-photo">
+        <img
+          src={episode.image}
+          alt={`Poster ${episode.title}`}
+        />
+      </div>
+      <div className="tb-card-title">
+        <a className="heading-starwars text-highlight " href="./episode">{episode.title}</a>
+      </div>
+      <div className="tb-card-description">{episode.openingCrawl}</div>
+    </div>
+  );
 }
