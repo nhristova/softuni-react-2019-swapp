@@ -158,7 +158,8 @@ a {
 .login-modal {
   background-color: var(--login-modal-background-color);
   padding: 15px;
-  margin: 50px;
+  max-width: 500px;
+  margin: 50px auto;  
 }
 
 .login-heading {
