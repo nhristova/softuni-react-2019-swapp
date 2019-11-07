@@ -1,6 +1,7 @@
 
 # Links
 - [Netlify page](https://romantic-chandrasekhar-56245e.netlify.com/)
+- [Custom domain http://swapp-app-2019.ml/](http://swapp-app-2019.ml/)
 - [Static html draft UI GitHub page](https://nhristova.github.io/softuni-react-2019-swapp/static/episodes)
 - [Specs pdf](CourseProjectAssignment.pdf)
 - [SoftUni course page](https://softuni.bg/trainings/2583/react-web-applications-masterclass-2019)
@@ -8,8 +9,8 @@
 
 # Specification Requirements
 
-- [ ] Fetch data from GraphQL server
-- [ ] Sign in / sign out
+- [ ] Fetch data from GraphQL server ~
+- [x] Sign in / sign out
 - [x] Show login error message - :neckbeard:
 - [x] Route login
 - [x] Route episodes
@@ -34,6 +35,6 @@
 - [ ] Load more characters (twelve)
 - [x] Swapp logo uses Star Wars font
 - [ ] Starship radar
-- [ ] Test coverage is 100%
+- [ ] Test coverage is 100% - :(
 - [x] Continuous integration - CI on PR to master
 - [x] Continuous deployment - CI on merge to master
