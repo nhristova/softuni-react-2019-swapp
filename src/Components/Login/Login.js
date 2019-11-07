@@ -1,27 +1,35 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
+import { useApolloClient, useMutation } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
+import { LoginForm } from './LoginForm';
+
+const SIGN_IN = gql`
+  mutation signIn($email: String!, $password: String!) {
+    signIn(email: $email, password: $password) {
+      token
+    }
+  }
+`;
 
 /* istanbul ignore next*/
 export const Login = props => {
-  if (props.isLogged) {
-    return <Redirect to="/episodes" />;
+  const client = useApolloClient();
+  const [signIn, { loading, error }] = useMutation(SIGN_IN, {
+    onCompleted: result => {
+      localStorage.setItem('token', result.signIn.token);
+      client.writeData({ data: { authenticated: true } });
+    },
+  });
+  
+  // TODO: Why does clicking the login button re-render the whole Login?
+  let showError = false;
+  if (loading) {
+    // Show loader
   }
+  if (error) {
+    showError = true;
+  };
 
-  return (
-    <div className="login-modal">
-      <h2 className="login-heading" onClick={props.changeTheme}>
-        SWAPP
-      </h2>
-      <div className="login-card">
-        <div id="login-error" className="login-error-message">
-          Should be hidden until check
-        </div>
-        <input className="login-input" type="email" placeholder="email" />
-        <input className="login-input" type="password" placeholder="password" />
-        <button className="load-more-button" onClick={props.login}>
-          Login
-        </button>
-      </div>
-    </div>
-  );
+  return <LoginForm signIn={signIn} toggleTheme={props.toggleTheme} showError={showError}/>;
 };

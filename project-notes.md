@@ -9,16 +9,16 @@
 # Specification Requirements
 
 - [ ] Fetch data from GraphQL server
-- [ ] Route login
-- [ ] Route episodes
+- [x] Route login
+- [x] Route episodes
 - [ ] Route characters
 - [ ] Route episodes/:episodeId
 - [ ] Route characters/:characterId
 - [ ] Route starships/:starshipId
 - [x] Switch theme
 - [ ] Store theme across sessions (on browser reload)
-- [ ] Show login error message
-- [ ] Change url upon navigation
+- [x] Show login error message - :neckbeard:
+- [x] Change url upon navigation
 - [x] Styles match provided designs and colors
 - [x] App is responsive
 - [ ] Load more episodes (five)

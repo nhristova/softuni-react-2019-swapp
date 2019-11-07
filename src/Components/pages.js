@@ -1,25 +1,19 @@
+import React from 'react';
+import { Switch, Redirect, Route } from 'react-router-dom';
+import { Header } from './Header';
 import { Episodes } from './Episodes';
 import { Characters } from './Characters';
 
-export const pages = [
-  // {
-  //   path: '/login',
-  //   name: 'Login',
-  //   component: Login,
-  // },
-  {
-    path: '/episodes',
-    name: 'Episodes',
-    component: Episodes,
-  },
-  {
-    path: '/characters',
-    name: 'Characters',
-    component: Characters,
-  },
-  // {
-  //     path: '/starships',
-  //     name: 'Starships',
-  //     component: Starships
-  // }
-];
+export const Pages = props => {
+  return (
+    <>
+      <Header changeTheme={props.toggleTheme} />
+      <Switch>
+        <Route path="/episodes" component={Episodes} />
+        <Route path="/characters" component={Characters} />
+        <Redirect from="/login" to="/episodes" />
+        <Redirect from="/" to="/episodes" />
+      </Switch>
+    </>
+  );
+};
