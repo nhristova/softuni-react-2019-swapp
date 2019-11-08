@@ -1,11 +1,38 @@
-import ReactDOM from 'react-dom';
 import React from 'react';
-import { Episodes } from './Episodes';
+import { MockedProvider } from '@apollo/react-testing';
+import renderer from 'react-test-renderer';
+import { Episodes, EPISODES_QUERY } from './Episodes';
 
-describe('Login component', () => {
+describe('Episodes component', () => {
   it('Renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Episodes />, div);
-    ReactDOM.unmountComponentAtNode(div);
+    const mocks = [
+      {
+        request: {
+          query: EPISODES_QUERY
+        },
+        result: {
+          data: {
+            allEpisodes: {
+              edges: [
+                {
+                  node: {
+                    id: "films.1",
+                    title: "A New Hope",
+                    episodeId: 4,
+                    image: "https://m.media-amazon.com/images/I/81r+LN-YReL._SS500_.jpg",
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+
+    renderer.create(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <Episodes />
+      </MockedProvider>);
+
   });
 });

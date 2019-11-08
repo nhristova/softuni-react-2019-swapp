@@ -2,7 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
 
-const EPISODES_QUERY = gql`
+export const EPISODES_QUERY = gql`
   query{
     allEpisodes(first: 100){
       edges{
