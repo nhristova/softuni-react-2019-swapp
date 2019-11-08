@@ -1,14 +1,13 @@
-
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/react-testing';
-import { Header } from './Header';
+import { Login } from '../pages';
 
-describe('Header component', () => {
+describe('Login component', () => {
   it('Renders without crashing', () => {
     renderer.create(
       <MockedProvider mocks={[]}>
-        <Header />
+        <Login />
       </MockedProvider>
     )
   });

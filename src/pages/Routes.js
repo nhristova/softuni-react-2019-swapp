@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
-import { Header } from './Header';
+import { Header } from '../Components';
 import { Episodes } from './Episodes';
 import { Characters } from './Characters';
 
-export const Pages = props => {
+export const Routes = props => {
   return (
     <>
       <Header changeTheme={props.toggleTheme} />

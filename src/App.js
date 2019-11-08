@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 
 import './App.css';
 import client from './client';
-import Home from './Home';
+import { Home } from './pages';
 
 function App() {
   return (
