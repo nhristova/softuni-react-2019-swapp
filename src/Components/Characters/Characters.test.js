@@ -1,11 +1,16 @@
-import ReactDOM from 'react-dom';
+
 import React from 'react';
+import renderer from 'react-test-renderer';
+import { MockedProvider } from '@apollo/react-testing';
 import { Characters } from './Characters';
 
-describe('Login component', () => {
+describe('Characters component', () => {
   it('Renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Characters />, div);
-    ReactDOM.unmountComponentAtNode(div);
+
+    renderer.create(
+      <MockedProvider mocks={[]}>
+        <Characters />
+      </MockedProvider>
+    )
   });
 });

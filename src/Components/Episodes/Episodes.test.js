@@ -1,6 +1,6 @@
 import React from 'react';
-import { MockedProvider } from '@apollo/react-testing';
 import renderer from 'react-test-renderer';
+import { MockedProvider } from '@apollo/react-testing';
 import { Episodes, EPISODES_QUERY } from './Episodes';
 
 describe('Episodes component', () => {

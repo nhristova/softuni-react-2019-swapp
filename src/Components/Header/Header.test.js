@@ -1,11 +1,15 @@
-import ReactDOM from 'react-dom';
+
 import React from 'react';
+import renderer from 'react-test-renderer';
+import { MockedProvider } from '@apollo/react-testing';
 import { Header } from './Header';
 
 describe('Header component', () => {
   it('Renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Header />, div);
-    ReactDOM.unmountComponentAtNode(div);
+    renderer.create(
+      <MockedProvider mocks={[]}>
+        <Header />
+      </MockedProvider>
+    )
   });
 });
