@@ -3,6 +3,7 @@ import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
 import { Routes } from './Routes';
 import { Login } from './Login';
+import { Redirect } from 'react-router-dom';
 
 export const AUTHENTICATED_QUERY = gql`
   query IsAuthenticated {
@@ -29,6 +30,9 @@ export const Home = () => {
   return data.authenticated ? (
     <Routes toggleTheme={toggleTheme} />
   ) : (
-      <Login toggleTheme={toggleTheme} />
+      <>
+        <Login toggleTheme={toggleTheme} />
+        <Redirect to="/login" />
+      </>
     );
 };
