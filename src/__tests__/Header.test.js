@@ -3,12 +3,16 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/react-testing';
 import { Header } from '../Components';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Header component', () => {
+
   it('Renders without crashing', () => {
     renderer.create(
       <MockedProvider mocks={[]}>
-        <Header />
+        <BrowserRouter>
+          <Header />
+        </BrowserRouter>
       </MockedProvider>
     )
   });
