@@ -9,14 +9,15 @@
 
 # Specification Requirements
 
-- [ ] Fetch data from GraphQL server ~
-- [x] Sign in / sign out
-- [x] Show login error message - :neckbeard:
+- [ ] Fetch data from GraphQL server - partial :seedling:
+- [x] Sign in / sign out functionality - local schema, add token to request header
+- [x] Show login error message when trying to login with valid email & password but different from demo@st6.io
+- [x] Handle epired token - Redirect to login page. Works on (re)load of page, not when switching between links inside :purple_heart: :sunglasses:
 - [x] Route login
 - [x] Route episodes
-- [ ] Route characters
-- [ ] Route episodes/:episodeId
-- [ ] Route characters/:characterId
+- [x] Route characters
+- [x] Route episodes/:episodeId
+- [ ] Route characters/:characterId 
 - [ ] Route starships/:starshipId
 - [ ] Load 5 characters on episode page
 - [ ] Load 12 characters on characters list page
@@ -29,12 +30,13 @@
 - [x] Switch theme from login and navbar
 - [ ] Store theme across sessions (on browser reload)
 - [x] Change url upon navigation
-- [x] Styles match provided designs and colors
-- [x] App is responsive
+- [ ] Styles match provided designs and colors - partial :seedling:
+- [ ] App is responsive - partial :seedling:
 - [ ] Load more episodes (five)
 - [ ] Load more characters (twelve)
-- [x] Swapp logo uses Star Wars font
+- [ ] Swapp logo uses Star Wars font - done in static html, make it work in real page too :seedling:
 - [ ] Starship radar
-- [ ] Test coverage is 100% - :(
+- [ ] Test coverage is :100: - :eyes: :x: :clock430:
 - [x] Continuous integration - CI on PR to master
 - [x] Continuous deployment - CI on merge to master
+- [ ] SSL access - !!!
