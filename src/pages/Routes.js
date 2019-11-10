@@ -11,9 +11,12 @@ export const Routes = props => {
     <>
       <Header changeTheme={props.toggleTheme} />
       <Switch>
-        <Route path="/episodes/:id" render={props => <Episode {...props} />} />
+        <Route
+          path="/episodes/:episodeId"
+          render={props => <Episode {...props} />}
+        />
         <Route path="/episodes" component={Episodes} />
-        <Route path="/characters/:id" component={Character} />
+        <Route path="/characters/:characterId" component={Character} />
         <Route path="/characters" component={Characters} />
         <Redirect from="/login" to="/episodes" />
         <Redirect from="/" to="/episodes" />

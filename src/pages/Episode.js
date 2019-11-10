@@ -17,7 +17,7 @@ export const EPISODE_QUERY = gql`
 
 export const Episode = props => {
   const { data, loading, error } = useQuery(EPISODE_QUERY, {
-    variables: { episodeId: props.match.params.id },
+    variables: { episodeId: props.match.params.episodeId },
   });
 
   if (loading) return <div>Loading</div>;

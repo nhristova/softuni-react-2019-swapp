@@ -13,10 +13,10 @@
 - [x] Sign in / sign out functionality - local schema, add token to request header
 - [x] Show login error message - when using an email other than demo@st6.io
 - [x] Route login
-- [x] Route episodes
+- [x] Route episodes - load all episodes
 - [x] Route characters
 - [x] Route episodes/:episodeId
-- [ ] Route characters/:characterId 
+- [ ] Route characters/:characterId -  load all starships
 - [ ] Route starships/:starshipId
 - [ ] Load 5 characters on episode page
 - [ ] Load 12 characters on characters list page
@@ -42,6 +42,8 @@
 
 ## Additional
 - [x] Load configs from .env file - Prefix name with REACT_APP!! (won't load otherwise)
-- [ ] SSL access - !!!
+- [x] SSL access - **very** different links for http and https
+  - https://swapp.st6.io/graphql
+  - http://softuni-swapp-212366186.eu-west-1.elb.amazonaws.com/graphql
 - [x] Handle epired token - Redirect to login page. Works on (re)load of page, not when switching between links inside :purple_heart: :sunglasses:
 - [x] Redirect to /login if not authorized - works for one-slash-routes, not for `/blah/somethinglese`
