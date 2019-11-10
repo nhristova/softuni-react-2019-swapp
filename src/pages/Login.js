@@ -2,7 +2,7 @@ import React from 'react';
 // import { Redirect } from 'react-router-dom';
 import { useApolloClient, useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import { LoginForm } from './LoginForm';
+import { LoginForm } from '../Components';
 
 const SIGN_IN = gql`
   mutation signIn($email: String!, $password: String!) {
@@ -21,16 +21,20 @@ export const Login = props => {
       client.writeData({ data: { authenticated: true } });
     },
   });
-  
-  // TODO: Why does clicking the login button re-render the whole Login?
+
   let showError = false;
   if (loading) {
-    // Show loader
+    // Show loader?
   }
   if (error) {
-    // TODO: Handle expired token
     showError = true;
-  };
+  }
 
-  return <LoginForm signIn={signIn} toggleTheme={props.toggleTheme} showError={showError}/>;
+  return (
+    <LoginForm
+      signIn={signIn}
+      toggleTheme={props.toggleTheme}
+      showError={showError}
+    />
+  );
 };

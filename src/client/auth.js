@@ -1,14 +1,16 @@
 import { setContext } from 'apollo-link-context';
+import { validateToken } from './validateToken';
 
 const authLink = setContext((_, { headers }) => {
   // get token from local storage
-  const token = localStorage.getItem('token');  
+  const token = localStorage.getItem('token');
+
   // spread existing headers
   // add authorization token
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: validateToken(token) ? `Bearer ${token}` : '',
     },
   };
 });

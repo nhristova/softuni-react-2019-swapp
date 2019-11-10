@@ -3,6 +3,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 import { loader } from 'graphql.macro';
 import authLink from './auth';
+import { validateToken } from './validateToken';
 
 const typeDefs = loader('./local-schema.gql');
 
@@ -20,7 +21,7 @@ const client = new ApolloClient({
 // local state always use {data: { }} object
 cache.writeData({
   data: {
-    authenticated: !!localStorage.getItem('token'),
+    authenticated: validateToken(localStorage.getItem('token')),
   },
 });
 

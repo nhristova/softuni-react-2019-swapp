@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
-import { Pages, Login } from './Components';
+import { Routes } from './Routes';
+import { Login } from './Login';
+import { Redirect } from 'react-router-dom';
 
 export const AUTHENTICATED_QUERY = gql`
   query IsAuthenticated {
@@ -10,7 +12,7 @@ export const AUTHENTICATED_QUERY = gql`
 `;
 
 /* istanbul ignore next*/
-const Home = () => {
+export const Home = () => {
   const { data } = useQuery(AUTHENTICATED_QUERY);
 
   let [theme, setTheme] = useState('light-theme');
@@ -26,10 +28,11 @@ const Home = () => {
   }, [theme]);
 
   return data.authenticated ? (
-    <Pages toggleTheme={toggleTheme} />
+    <Routes toggleTheme={toggleTheme} />
   ) : (
-    <Login toggleTheme={toggleTheme} />
+    <>
+      <Login toggleTheme={toggleTheme} />
+      <Redirect to="/login" />
+    </>
   );
 };
-
-export default Home;

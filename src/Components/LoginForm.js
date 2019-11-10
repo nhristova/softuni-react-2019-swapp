@@ -24,7 +24,10 @@ export const LoginForm = props => {
         SWAPP
       </h2>
       <form className="login-card" onSubmit={handleSubmit}>
-        <div id="login-error" className={`login-error-message ${props.showError ? '' : 'hidden'}`}>
+        <div
+          id="login-error"
+          className={`login-error-message ${props.showError ? '' : 'hidden'}`}
+        >
           Something went wrong with signin
         </div>
         <input
