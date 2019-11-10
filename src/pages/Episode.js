@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
+import { Detail } from '../Components';
 
 export const EPISODE_QUERY = gql`
   query($episodeId: ID!) {
@@ -17,7 +18,7 @@ export const EPISODE_QUERY = gql`
 
 export const Episode = props => {
   const { data, loading, error } = useQuery(EPISODE_QUERY, {
-    variables: { episodeId: props.match.params.id },
+    variables: { episodeId: props.match.params.episodeId },
   });
 
   if (loading) return <div>Loading</div>;
@@ -46,14 +47,8 @@ export const Episode = props => {
       <div className="episode-details">
         <div className="episode-synopsis">{episode.openingCrawl}</div>
         <div className="episode-info">
-          <div>
-            <span className="text-highlight-2">Director: </span>
-            <span className="text-highlight">{episode.director}</span>
-          </div>
-          <div>
-            <span className="text-highlight-2">Release date: </span>
-            <span className="text-highlight">{episode.releaseDate}</span>
-          </div>
+          <Detail type="Director" value={episode.director} />
+          <Detail type="Release date" value={episode.releaseDate} />
         </div>
       </div>
       <div className="characters-list">
@@ -63,27 +58,5 @@ export const Episode = props => {
       </div>
       <button className="load-more-button">Load more</button>
     </main>
-  );
-};
-
-export const CharacterLRCard = character => {
-  return (
-    <div className="small-lr-card lr-card">
-      <img
-        className="lr-card-photo"
-        src={character.image}
-        alt={character.name}
-      />
-      <div className="lr-card-details">
-        <div className="lr-card-title">
-          <a
-            className="heading-starwars text-highlight "
-            href={`/character/:${character.id}`}
-          >
-            {character.name}
-          </a>
-        </div>
-      </div>
-    </div>
   );
 };
