@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
+import { Detail } from '../Components';
 
 export const CHARACTER_QUERY = gql`
   query($characterId: ID!) {
@@ -57,22 +58,10 @@ export const Character = props => {
             <img src={person.image} alt={person.name} />
           </div>
           <div className="tb-card-details">
-            <div>
-              <span className="text-highlight-2">Height:</span>
-              <span className="text-highlight">{person.height}</span>
-            </div>
-            <div>
-              <span className="text-highlight-2">Weight:</span>
-              <span className="text-highlight">{person.mass}</span>
-            </div>
-            <div>
-              <span className="text-highlight-2">Species:</span>
-              <span className="text-highlight">{person.species.name}</span>
-            </div>
-            <div>
-              <span className="text-highlight-2">Home World:</span>
-              <span className="text-highlight">{person.homeworld.name}</span>
-            </div>
+            <Detail type="Height" value={person.height} />
+            <Detail type="Weight" value={person.mass} />
+            <Detail type="Species" value={person.species.name} />
+            <Detail type="Home World" value={person.homeworld.name} />
           </div>
         </div>
         <div className="page-column-half starhips-list">
@@ -96,7 +85,7 @@ export const StarshipLRCard = props => {
       <div className="lr-card-details">
         <div className="lr-card-title">
           <a
-            href={`/starship/${ship.id}`}
+            href={`/starships/${ship.id}`}
             className="heading-starwars text-highlight "
           >
             {ship.name}

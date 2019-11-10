@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail component renders correctly 1`] = `
+<div>
+  <span
+    className="text-highlight-2"
+  >
+    test type
+    : 
+  </span>
+  <span
+    className="text-highlight"
+  >
+    test value
+  </span>
+</div>
+`;
