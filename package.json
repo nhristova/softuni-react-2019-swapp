@@ -16,12 +16,12 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "set CI=true lint-staged"
+            "pre-commit": "cross-env CI=true lint-staged"
         }
     },
     "lint-staged": {
         "src/**/*.js": [
-            "prettier --write src/**/*.{js,json,css,sccs}",
+            "prettier --write",
             "eslint --max-warnings=0",
             "npm run test --bail --findRelatedTests",
             "git add"
