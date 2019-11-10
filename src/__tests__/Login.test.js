@@ -8,7 +8,7 @@ describe('Login component', () => {
     renderer.create(
       <MockedProvider mocks={[]}>
         <Login />
-      </MockedProvider>
-    )
+      </MockedProvider>,
+    );
   });
 });

@@ -21,7 +21,7 @@
     },
     "lint-staged": {
         "src/**/*.js": [
-            "prettier --write",
+            "prettier --write src/**/*.{js,json,css,sccs}",
             "eslint --max-warnings=0",
             "npm run test --bail --findRelatedTests",
             "git add"

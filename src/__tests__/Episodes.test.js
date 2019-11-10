@@ -8,7 +8,7 @@ describe('Episodes component', () => {
     const mocks = [
       {
         request: {
-          query: EPISODES_QUERY
+          query: EPISODES_QUERY,
         },
         result: {
           data: {
@@ -16,23 +16,24 @@ describe('Episodes component', () => {
               edges: [
                 {
                   node: {
-                    id: "films.1",
-                    title: "A New Hope",
+                    id: 'films.1',
+                    title: 'A New Hope',
                     episodeId: 4,
-                    image: "https://m.media-amazon.com/images/I/81r+LN-YReL._SS500_.jpg",
-                  }
-                }
-              ]
-            }
-          }
-        }
-      }
-    ]
+                    image:
+                      'https://m.media-amazon.com/images/I/81r+LN-YReL._SS500_.jpg',
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    ];
 
     renderer.create(
       <MockedProvider mocks={mocks} addTypeName={false}>
         <Episodes />
-      </MockedProvider>);
-
+      </MockedProvider>,
+    );
   });
 });

@@ -30,9 +30,9 @@ export const Home = () => {
   return data.authenticated ? (
     <Routes toggleTheme={toggleTheme} />
   ) : (
-      <>
-        <Login toggleTheme={toggleTheme} />
-        <Redirect to="/login" />
-      </>
-    );
+    <>
+      <Login toggleTheme={toggleTheme} />
+      <Redirect to="/login" />
+    </>
+  );
 };

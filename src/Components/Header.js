@@ -13,13 +13,13 @@ export const Header = props => {
     <header className="page-header">
       <div className="header-logo" onClick={props.changeTheme}>
         SWAPP
-        </div>
+      </div>
       <nav className="header-navigation">
         <Link to="/episodes">Episodes</Link>
         <Link to="/characters">Characters</Link>
         <span className="logout-icon" onClick={handleSignOut}>
           ➡
-          </span>
+        </span>
       </nav>
     </header>
   );

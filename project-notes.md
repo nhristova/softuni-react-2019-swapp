@@ -22,7 +22,7 @@
 - [ ] Load 5 characters on episode page
 - [ ] Load 12 characters on characters list page
 - [ ] Load more episodes / characters on button click
-- [ ] Hide button button when no more items
+- [ ] Hide button when no more items
 - [x] All routes except login are authorized
 - [x] Redirect to episodes from /
 - [x] Redirect to episodes after login

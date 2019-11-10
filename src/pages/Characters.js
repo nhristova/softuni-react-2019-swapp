@@ -4,9 +4,8 @@ import gql from 'graphql-tag.macro';
 
 export const CHARACTERS_QUERY = gql`
   query AllPeople($perPage: Int!) {
-    allPeople(first: $perPage) 
-    {
-      edges{
+    allPeople(first: $perPage) {
+      edges {
         node {
           id
           name
@@ -19,27 +18,29 @@ export const CHARACTERS_QUERY = gql`
 
 export const Characters = () => {
   const { data, loading, error } = useQuery(CHARACTERS_QUERY, {
-    variables: { perPage: 12 }
+    variables: { perPage: 12 },
   });
 
   if (loading) return <div>Loading</div>;
   if (error) return <p>Error</p>;
 
   const {
-    allPeople: { edges }
+    allPeople: { edges },
   } = data;
 
   return (
     <main className="characters-main">
       <div className="characters-list">
-        {edges.map(ed => <CharacterLRCard character={ed.node} key={ed.node.id} />)}
+        {edges.map(ed => (
+          <CharacterLRCard character={ed.node} key={ed.node.id} />
+        ))}
       </div>
       <button className="load-more-button">Load more</button>
     </main>
   );
 };
 
-export const CharacterLRCard = (prop) => {
+export const CharacterLRCard = prop => {
   const character = prop.character;
   return (
     <div className="small-lr-card lr-card">
@@ -55,9 +56,9 @@ export const CharacterLRCard = (prop) => {
             href={`./characters/${character.id}`}
           >
             {character.name}
-              </a>
+          </a>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
