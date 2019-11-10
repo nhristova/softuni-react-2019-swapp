@@ -1,7 +1,7 @@
 
 # Links
 - [Netlify page](https://romantic-chandrasekhar-56245e.netlify.com/)
-- [Custom domain http://swapp-app-2019.ml/](http://swapp-app-2019.ml/)
+- [Custom domain http://swapp-app-2019.ml/](http://swapp-app-2019.ml/) - update - can't make https work, getting ERR_CERT_COMMON_NAME_INVALID ... :dizzy_face:
 - [Static html draft UI GitHub page](https://nhristova.github.io/softuni-react-2019-swapp/static/episodes)
 - [Specs pdf](CourseProjectAssignment.pdf)
 - [SoftUni course page](https://softuni.bg/trainings/2583/react-web-applications-masterclass-2019)
