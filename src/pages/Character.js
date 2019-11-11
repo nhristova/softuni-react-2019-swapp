@@ -44,6 +44,7 @@ export const Character = props => {
   if (error) return <p>Error</p>;
 
   const { person } = data;
+  const image = person.image || '/no-image-darth.png';
 
   return (
     <main className="character-main">
@@ -56,7 +57,7 @@ export const Character = props => {
             {person.name}
           </div>
           <div className="tb-card-photo">
-            <img src={person.image} alt={person.name} />
+            <img src={image} alt={person.name} />
           </div>
           <div className="tb-card-details">
             <Detail type="Height" value={person.height} />
