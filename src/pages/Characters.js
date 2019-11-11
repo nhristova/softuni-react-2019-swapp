@@ -4,8 +4,12 @@ import gql from 'graphql-tag.macro';
 import { LRCard } from '../Components';
 
 export const CHARACTERS_QUERY = gql`
-  query AllPeople($perPage: Int!) {
-    allPeople(first: $perPage) {
+  query AllPeople($perPage: Int!, $after: String) {
+    allPeople(first: $perPage, after: $after) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       edges {
         node {
           id
@@ -18,7 +22,7 @@ export const CHARACTERS_QUERY = gql`
 `;
 
 export const Characters = () => {
-  const { data, loading, error } = useQuery(CHARACTERS_QUERY, {
+  const { data, loading, error, fetchMore } = useQuery(CHARACTERS_QUERY, {
     variables: { perPage: 12 },
   });
 
@@ -26,8 +30,28 @@ export const Characters = () => {
   if (error) return <p>Error</p>;
 
   const {
-    allPeople: { edges },
+    allPeople: { edges, pageInfo },
   } = data;
+
+  const loadMore = () => {
+    fetchMore({
+      variables: {
+        after: pageInfo.endCursor,
+      },
+      updateQuery: (prev, { fetchMoreResult: { allPeople: allPeopleNew } }) => {
+        if (!allPeopleNew.edges.length) {
+          return prev;
+        }
+
+        return {
+          allPeople: {
+            ...allPeopleNew,
+            edges: [...prev.allPeople.edges, ...allPeopleNew.edges],
+          },
+        };
+      },
+    });
+  };
 
   return (
     <main className="characters-main">
@@ -41,7 +65,11 @@ export const Characters = () => {
           />
         ))}
       </div>
-      <button className="load-more-button">Load more</button>
+      {pageInfo.hasNextPage && (
+        <button className="load-more-button" onClick={loadMore}>
+          Load more
+        </button>
+      )}
     </main>
   );
 };
