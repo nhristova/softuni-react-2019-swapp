@@ -2,6 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
 import { Detail, LRCard } from '../Components';
+import { useParams } from 'react-router-dom';
 
 export const CHARACTER_QUERY = gql`
   query($characterId: ID!) {
@@ -34,15 +35,15 @@ export const CHARACTER_QUERY = gql`
 `;
 
 export const Character = props => {
+  const { characterId } = useParams();
   const { data, loading, error } = useQuery(CHARACTER_QUERY, {
-    variables: { characterId: props.match.params.characterId },
+    variables: { characterId: characterId },
   });
 
   if (loading) return <div>Loading</div>;
   if (error) return <p>Error</p>;
 
   const { person } = data;
-  console.log(person);
 
   return (
     <main className="character-main">

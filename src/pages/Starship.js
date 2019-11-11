@@ -2,6 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
 import { Detail } from '../Components';
+import { useParams } from 'react-router';
 
 export const STARSHIP_QUERY = gql`
   query($starshipId: ID!) {
@@ -21,8 +22,9 @@ export const STARSHIP_QUERY = gql`
 `;
 
 export const Starship = props => {
+  const { starshipId } = useParams();
   const { data, loading, error } = useQuery(STARSHIP_QUERY, {
-    variables: { starshipId: props.match.params.starshipId },
+    variables: { starshipId: starshipId },
   });
 
   if (loading) return <div>Loading</div>;
