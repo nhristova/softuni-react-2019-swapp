@@ -19,14 +19,12 @@
 - [x] Route login
 - [x] Route episodes - load all episodes
 - [x] Route characters - load 12
-- [x] Route episodes/:episodeId
-- [ ] Route characters/:characterId -  load all starships
+- [x] Route episodes/:episodeId - load 5 characters
+- [x] Route characters/:characterId - load all starships
 - [x] Route starships/:starshipId
-- [ ] Load 5 characters on episode page
-- [ ] Load more episodes (five)
-- [ ] Load more characters (twelve)
-- [ ] Load more episodes / characters on button click
-- [ ] Hide button when no more items
+- [ ] Load 5 more characters on episode page
+- [x] Load 12 more characters on characters page (twelve) :satisfied:
+- [x] Hide load more button when no more items
 - [x] All routes except login are authorized
 - [x] Redirect to episodes from /
 - [x] Redirect to episodes after login
