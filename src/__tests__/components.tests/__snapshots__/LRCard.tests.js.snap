@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LRCard component Load without crashing 1`] = `
+<div
+  className="lr-card "
+>
+  <img
+    className="lr-card-photo"
+    src="/no-image-darth.png"
+  />
+  <div
+    className="lr-card-details"
+  >
+    <div
+      className="lr-card-title"
+    >
+      <a
+        className="heading-starwars text-highlight "
+        href="//undefined"
+      />
+    </div>
+  </div>
+</div>
+`;

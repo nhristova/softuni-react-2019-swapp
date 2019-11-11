@@ -1,73 +1,51 @@
 
-[Project notes](project-notes.md) << All links are here :scream:
+# Project Links
+- [Netlify page](https://romantic-chandrasekhar-56245e.netlify.com/)
+- [Custom domain](http://swapp-app-2019.ml/)
+- [Static html & css](https://nhristova.github.io/softuni-react-2019-swapp/static/episodes) -  draft UI GitHub page
+
+# Course Links
+- [SoftUni course page](https://softuni.bg/trainings/2583/react-web-applications-masterclass-2019)
+- [GitHub demos code](https://github.com/st6io/react-web-apps-master-class-course)
+- [Create React App readme](readme-cra.md)
 
 -----------------
+# Specification Requirements
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Specs pdf](CourseProjectAssignment.pdf)
+- [ ] Fetch data from GraphQL server - partial :seedling:
+- [x] Sign in / sign out functionality - local schema, add token to request header
+- [x] Show login error message - when using an email other than demo@st6.io
+- [x] Route login
+- [x] Route episodes - load all episodes
+- [x] Route characters - load 12
+- [x] Route episodes/:episodeId - load 5 characters
+- [x] Route characters/:characterId - load all starships
+- [x] Route starships/:starshipId
+- [ ] Load 5 more characters on episode page
+- [x] Load 12 more characters on characters page (twelve) :satisfied:
+- [x] Hide load more button when no more items
+- [x] All routes except login are authorized
+- [x] Redirect to episodes from /
+- [x] Redirect to episodes after login
+- [x] Navbar links - episodes, characters, sign out
+- [x] Switch theme from login and navbar
+- [ ] Store theme across sessions (on browser reload)
+- [x] Change url upon navigation
+- [ ] Styles match provided designs and colors - partial :seedling:
+- [ ] App is responsive - partial :seedling:
+- [ ] Swapp logo uses Star Wars font - done in static html, make it work in real page too :seedling:
+- [ ] Starship radar
+- [ ] Test coverage is :100: - :eyes: :x: :clock430:
+- [x] Hooks on commit
+- [x] Continuous integration - CI on PR to master
+- [x] Continuous deployment - CI on merge to master
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Additional
+- [x] Load configs from .env file - Prefix name with REACT_APP!! (won't load otherwise)
+- [x] SSL access - **very** different links for http and https
+  - https://swapp.st6.io/graphql
+  - http://softuni-swapp-212366186.eu-west-1.elb.amazonaws.com/graphql
+- [x] Handle epired token - Redirect to login page. Works on (re)load of page, not when switching between links inside :purple_heart: :sunglasses:
+- [x] Redirect to /login if not authorized - works for one-slash-routes, not for `/blah/somethinglese`
+- Fix links

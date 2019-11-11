@@ -1,10 +1,15 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag.macro';
+import { LRCard } from '../Components';
 
 export const CHARACTERS_QUERY = gql`
-  query AllPeople($perPage: Int!) {
-    allPeople(first: $perPage) {
+  query AllPeople($perPage: Int!, $after: String) {
+    allPeople(first: $perPage, after: $after) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       edges {
         node {
           id
@@ -17,7 +22,7 @@ export const CHARACTERS_QUERY = gql`
 `;
 
 export const Characters = () => {
-  const { data, loading, error } = useQuery(CHARACTERS_QUERY, {
+  const { data, loading, error, fetchMore } = useQuery(CHARACTERS_QUERY, {
     variables: { perPage: 12 },
   });
 
@@ -25,40 +30,46 @@ export const Characters = () => {
   if (error) return <p>Error</p>;
 
   const {
-    allPeople: { edges },
+    allPeople: { edges, pageInfo },
   } = data;
+
+  const loadMore = () => {
+    fetchMore({
+      variables: {
+        after: pageInfo.endCursor,
+      },
+      updateQuery: (prev, { fetchMoreResult: { allPeople: allPeopleNew } }) => {
+        if (!allPeopleNew.edges.length) {
+          return prev;
+        }
+
+        return {
+          allPeople: {
+            ...allPeopleNew,
+            edges: [...prev.allPeople.edges, ...allPeopleNew.edges],
+          },
+        };
+      },
+    });
+  };
 
   return (
     <main className="characters-main">
       <div className="characters-list">
         {edges.map(ed => (
-          <CharacterLRCard character={ed.node} key={ed.node.id} />
+          <LRCard
+            item={ed.node}
+            key={ed.node.id}
+            page="characters"
+            size="small-lr-card"
+          />
         ))}
       </div>
-      <button className="load-more-button">Load more</button>
+      {pageInfo.hasNextPage && (
+        <button className="load-more-button" onClick={loadMore}>
+          Load more
+        </button>
+      )}
     </main>
-  );
-};
-
-export const CharacterLRCard = prop => {
-  const character = prop.character;
-  return (
-    <div className="small-lr-card lr-card">
-      <img
-        className="lr-card-photo"
-        src={character.image}
-        alt={character.name}
-      />
-      <div className="lr-card-details">
-        <div className="lr-card-title">
-          <a
-            className="heading-starwars text-highlight "
-            href={`./characters/${character.id}`}
-          >
-            {character.name}
-          </a>
-        </div>
-      </div>
-    </div>
   );
 };

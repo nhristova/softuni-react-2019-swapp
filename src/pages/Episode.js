@@ -1,10 +1,11 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
-import { Detail } from '../Components';
+import { Detail, LRCard } from '../Components';
+import { useParams } from 'react-router-dom';
 
 export const EPISODE_QUERY = gql`
-  query($episodeId: ID!) {
+  query($episodeId: ID!, $perPage: Int, $after: String) {
     episode(id: $episodeId) {
       id
       title
@@ -12,19 +13,62 @@ export const EPISODE_QUERY = gql`
       openingCrawl
       director
       releaseDate
+      people(first: $perPage, after: $after) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        edges {
+          node {
+            id
+            name
+            image
+          }
+        }
+      }
     }
   }
 `;
 
 export const Episode = props => {
+  const { episodeId } = useParams();
   const { data, loading, error } = useQuery(EPISODE_QUERY, {
-    variables: { episodeId: props.match.params.episodeId },
+    variables: {
+      episodeId: episodeId,
+      perPage: 5,
+    },
   });
 
   if (loading) return <div>Loading</div>;
   if (error) return <p>Error</p>;
 
   const { episode } = data;
+
+  // const loadMore = () => {
+  //   fetchMore({
+  //     variables: {
+  //       perPage: 2,
+  //       after: episode.people.pageInfo.endCursor
+  //     },
+  //     updateQuery: (prev, { fetchMoreResult: { episode: episodeNew } }) => {
+  //       return {
+  //         episode: {
+  //           ...episodeNew,
+  //           people: {
+  //             t
+  //             pageInfo: {
+  //               ...episodeNew.people.pageInfo
+  //             },
+  //             edges: [
+  //               ...prev.episode.people.edges,
+  //               ...episodeNew.people.edges
+  //             ]
+  //           }
+  //         }
+  //       }
+  //     }
+  //   })
+  // }
 
   return (
     <main className="episode-main">
@@ -52,11 +96,20 @@ export const Episode = props => {
         </div>
       </div>
       <div className="characters-list">
-        {
-          // episode.characters.map(ch => <CharacterLRCard character={ch} key={ch.id} />)
-        }
+        {episode.people.edges.map(ch => (
+          <LRCard
+            item={ch.node}
+            key={ch.node.id}
+            size="small-lr-card"
+            page="characters"
+          />
+        ))}
       </div>
-      <button className="load-more-button">Load more</button>
+      {episode.people.pageInfo.hasNextPage && (
+        <button className="load-more-button" onClick={() => {}}>
+          Load more
+        </button>
+      )}
     </main>
   );
 };
