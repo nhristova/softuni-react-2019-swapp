@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
-import { Detail } from '../Components';
+import { Detail, LRCard } from '../Components';
 
 export const CHARACTER_QUERY = gql`
   query($characterId: ID!) {
@@ -69,29 +69,15 @@ export const Character = props => {
             Piloted Starships
           </div>
           {person.starships.edges.map(ship => (
-            <StarshipLRCard starship={ship.node} key={ship.node.id} />
+            <LRCard
+              item={ship.node}
+              key={ship.node.id}
+              page="starships"
+              size="tiny-lr-card"
+            />
           ))}
         </div>
       </div>
     </main>
-  );
-};
-
-export const StarshipLRCard = props => {
-  const ship = props.starship;
-  return (
-    <div className="tiny-lr-card lr-card">
-      <img className="lr-card-photo" src={ship.image} alt={ship.name} />
-      <div className="lr-card-details">
-        <div className="lr-card-title">
-          <a
-            href={`/starships/${ship.id}`}
-            className="heading-starwars text-highlight "
-          >
-            {ship.name}
-          </a>
-        </div>
-      </div>
-    </div>
   );
 };

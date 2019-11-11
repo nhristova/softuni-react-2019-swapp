@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag.macro';
+import { LRCard } from '../Components';
 
 export const CHARACTERS_QUERY = gql`
   query AllPeople($perPage: Int!) {
@@ -32,33 +33,15 @@ export const Characters = () => {
     <main className="characters-main">
       <div className="characters-list">
         {edges.map(ed => (
-          <CharacterLRCard character={ed.node} key={ed.node.id} />
+          <LRCard
+            item={ed.node}
+            key={ed.node.id}
+            page="characters"
+            size="small-lr-card"
+          />
         ))}
       </div>
       <button className="load-more-button">Load more</button>
     </main>
-  );
-};
-
-export const CharacterLRCard = prop => {
-  const character = prop.character;
-  return (
-    <div className="small-lr-card lr-card">
-      <img
-        className="lr-card-photo"
-        src={character.image}
-        alt={character.name}
-      />
-      <div className="lr-card-details">
-        <div className="lr-card-title">
-          <a
-            className="heading-starwars text-highlight "
-            href={`./characters/${character.id}`}
-          >
-            {character.name}
-          </a>
-        </div>
-      </div>
-    </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
-import { Detail } from '../Components';
+import { Detail, LRCard } from '../Components';
 
 export const EPISODE_QUERY = gql`
   query($episodeId: ID!) {
@@ -12,6 +12,15 @@ export const EPISODE_QUERY = gql`
       openingCrawl
       director
       releaseDate
+      people(first: 5) {
+        edges {
+          node {
+            id
+            name
+            image
+          }
+        }
+      }
     }
   }
 `;
@@ -52,9 +61,14 @@ export const Episode = props => {
         </div>
       </div>
       <div className="characters-list">
-        {
-          // episode.characters.map(ch => <CharacterLRCard character={ch} key={ch.id} />)
-        }
+        {episode.people.edges.map(ch => (
+          <LRCard
+            item={ch.node}
+            key={ch.node.id}
+            size="small-lr-card"
+            page="characters"
+          />
+        ))}
       </div>
       <button className="load-more-button">Load more</button>
     </main>
