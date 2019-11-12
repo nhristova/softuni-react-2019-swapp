@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/react-testing';
-import { Episodes, EPISODES_QUERY } from '../pages';
+import { Episodes, EPISODES_QUERY } from '../../pages';
 
 describe('Episodes component', () => {
   it('Renders without crashing', () => {
