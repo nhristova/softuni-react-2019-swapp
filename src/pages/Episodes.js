@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
+import { Link } from 'react-router-dom';
 
 export const EPISODES_QUERY = gql`
   query {
@@ -44,12 +45,12 @@ export const EpisodeTBCard = prop => {
         <img src={episode.image} alt={`Poster ${episode.title}`} />
       </div>
       <div className="tb-card-title">
-        <a
-          className="heading-starwars text-highlight "
-          href={`/episodes/${episode.id}`}
+        <Link
+          to={`/episodes/${episode.id}`}
+          className="heading-starwars text-highlight"
         >
           {episode.title}
-        </a>
+        </Link>
       </div>
       <div className="tb-card-description">{episode.openingCrawl}</div>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const LRCard = props => {
   const item = props.item;
@@ -8,12 +9,12 @@ export const LRCard = props => {
       <img className="lr-card-photo" src={image} alt={item.name} />
       <div className="lr-card-details">
         <div className="lr-card-title">
-          <a
-            href={`/${props.page}/${item.id}`}
+          <Link
+            to={`/${props.page}/${item.id}`}
             className="heading-starwars text-highlight "
           >
             {item.name}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

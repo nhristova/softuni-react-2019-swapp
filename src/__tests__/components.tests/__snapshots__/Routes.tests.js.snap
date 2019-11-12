@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes component Load without crashing 1`] = `
+<div>
+  <header
+    class="page-header"
+  >
+    <div
+      class="header-logo"
+    >
+      SWAPP
+    </div>
+    <nav
+      class="header-navigation"
+    >
+      <a
+        href="/episodes"
+      >
+        Episodes
+      </a>
+      <a
+        href="/characters"
+      >
+        Characters
+      </a>
+      <span
+        class="logout-icon"
+      >
+        ➡
+      </span>
+    </nav>
+  </header>
+  <div>
+    Loading
+  </div>
+</div>
+`;
