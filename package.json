@@ -12,7 +12,8 @@
         "ci": "npm run lint && cross-env CI=true npm run test --coverage",
         "format:all": "npm run lint && npm run format",
         "test:all": "set CI=true && npm test -- --coverage",
-        "build:all": "npm run format:all && npm test:all && npm run build"
+        "build:all": "npm run format:all && npm test:all && npm run build",
+        "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
     },
     "husky": {
         "hooks": {

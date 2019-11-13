@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
+import { TBCardEpisode } from '../Components/TBCardEpisode';
 
 export const EPISODES_QUERY = gql`
   query {
@@ -30,28 +31,8 @@ export const Episodes = () => {
   return (
     <main className="episodes-main">
       {edges.map(ed => (
-        <EpisodeTBCard episode={ed.node} key={ed.node.id} />
+        <TBCardEpisode episode={ed.node} key={ed.node.id} />
       ))}
     </main>
-  );
-};
-
-export const EpisodeTBCard = prop => {
-  const episode = prop.episode;
-  return (
-    <div className="episode-card tb-card">
-      <div className="tb-card-photo">
-        <img src={episode.image} alt={`Poster ${episode.title}`} />
-      </div>
-      <div className="tb-card-title">
-        <a
-          className="heading-starwars text-highlight "
-          href={`/episodes/${episode.id}`}
-        >
-          {episode.title}
-        </a>
-      </div>
-      <div className="tb-card-description">{episode.openingCrawl}</div>
-    </div>
   );
 };

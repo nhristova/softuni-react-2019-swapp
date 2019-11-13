@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character page Loads mock data 1`] = `
+<main
+  className="character-main"
+>
+  <div
+    className="page-title page-title-1 heading-starwars text-highlight text-highlight "
+  >
+    Quarsh Panaka
+  </div>
+  <div
+    className="page-content"
+  >
+    <div
+      className="page-column-half big-lr-card tb-card"
+    >
+      <div
+        className="tb-card-title heading-starwars text-highlight "
+      >
+        Quarsh Panaka
+      </div>
+      <div
+        className="tb-card-photo"
+      >
+        <img
+          alt="Quarsh Panaka"
+          src="/no-image-darth.png"
+        />
+      </div>
+      <div
+        className="tb-card-details"
+      >
+        <div>
+          <span
+            className="text-highlight-2"
+          >
+            Height
+            : 
+          </span>
+          <span
+            className="text-highlight"
+          >
+            183
+          </span>
+        </div>
+        <div>
+          <span
+            className="text-highlight-2"
+          >
+            Weight
+            : 
+          </span>
+          <span
+            className="text-highlight"
+          />
+        </div>
+        <div>
+          <span
+            className="text-highlight-2"
+          >
+            Species
+            : 
+          </span>
+          <span
+            className="text-highlight"
+          >
+            Human
+          </span>
+        </div>
+        <div>
+          <span
+            className="text-highlight-2"
+          >
+            Home World
+            : 
+          </span>
+          <span
+            className="text-highlight"
+          >
+            Naboo
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="page-column-half starhips-list"
+    >
+      <div
+        className="column-title heading-starwars text-highlight2 page-title-2"
+      >
+        Piloted Starships
+      </div>
+    </div>
+  </div>
+</main>
+`;
