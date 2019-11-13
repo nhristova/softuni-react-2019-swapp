@@ -1,17 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Episodes component Renders error 1`] = `
+exports[`Episodes component Renders episodes 1`] = `
+<main
+  className="episodes-main"
+>
+  <div
+    className="episode-card tb-card"
+  >
+    <div
+      className="tb-card-photo"
+    >
+      <img
+        alt="Poster A New Hope"
+        src="https://m.media-amazon.com/images/I/81r+LN-YReL._SS500_.jpg"
+      />
+    </div>
+    <div
+      className="tb-card-title"
+    >
+      <a
+        className="heading-starwars text-highlight"
+        href="/episodes/films.1"
+        onClick={[Function]}
+      >
+        A New Hope
+      </a>
+    </div>
+    <div
+      className="tb-card-description"
+    >
+      bala
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Episodes component Renders loader and error 1`] = `
 <div>
-  <p>
-    Error
-  </p>
+  Loading
 </div>
 `;
 
-exports[`Episodes component Renders loader  1`] = `
-<div>
-  <div>
-    Loading
-  </div>
-</div>
+exports[`Episodes component Renders loader and error 2`] = `
+<p>
+  Error
+</p>
 `;

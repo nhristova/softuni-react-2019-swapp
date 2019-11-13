@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters component Renders mock data 1`] = `
+<main
+  className="characters-main"
+>
+  <div
+    className="characters-list"
+  >
+    <div
+      className="lr-card small-lr-card"
+    >
+      <img
+        alt="Luke Skywalker"
+        className="lr-card-photo"
+        src="http://jhg"
+      />
+      <div
+        className="lr-card-details"
+      >
+        <div
+          className="lr-card-title"
+        >
+          <a
+            className="heading-starwars text-highlight "
+            href="/characters/people.1"
+            onClick={[Function]}
+          >
+            Luke Skywalker
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;

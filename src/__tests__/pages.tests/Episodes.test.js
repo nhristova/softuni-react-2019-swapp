@@ -2,8 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { MockedProvider, wait } from '@apollo/react-testing';
 import { Episodes, EPISODES_QUERY } from '../../pages';
-import { act } from 'react-dom/test-utils';
-import ReactDOM from 'react-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('Episodes component', () => {
   let container;
@@ -18,64 +17,61 @@ describe('Episodes component', () => {
     container = null;
   });
 
-  it.skip('Renders loader ', () => {
-    act(() => {
-      ReactDOM.render(
+  it('Renders loader and error', async () => {
+    let result = renderer.create(
+      <MemoryRouter initialEntries={['/episodes']}>
         <MockedProvider mocks={[]}>
           <Episodes />
-        </MockedProvider>,
-        container,
-      );
-      expect(container).toMatchSnapshot();
-    });
-  });
+        </MockedProvider>
+      </MemoryRouter>,
+      container,
+    );
+    expect(result).toMatchSnapshot();
 
-  it.skip('Renders error', async () => {
-    await act(() => {
-      ReactDOM.render(
-        <MockedProvider mocks={[]}>
-          <Episodes />
-        </MockedProvider>,
-        container,
-      );
+    await renderer.act(async () => {
+      await wait(0);
     });
 
-    expect(container).toMatchSnapshot();
+    expect(result).toMatchSnapshot();
   });
 
-  it.skip('Renders episodes', async () => {
+  it('Renders episodes', async () => {
     const mock = {
       request: {
         query: EPISODES_QUERY,
+        variables: {},
       },
-      data: {
-        allEpisodes: {
-          edges: [
-            {
-              node: {
-                id: 'films.1',
-                title: 'A New Hope',
-                episodeId: 4,
-                image:
-                  'https://m.media-amazon.com/images/I/81r+LN-YReL._SS500_.jpg',
+      result: {
+        data: {
+          allEpisodes: {
+            edges: [
+              {
+                node: {
+                  id: 'films.1',
+                  title: 'A New Hope',
+                  episodeId: 4,
+                  image:
+                    'https://m.media-amazon.com/images/I/81r+LN-YReL._SS500_.jpg',
+                  openingCrawl: 'bala',
+                },
               },
-            },
-          ],
+            ],
+          },
         },
       },
     };
 
-    let result = {};
-
-    result = renderer.create(
-      <MockedProvider mocks={[mock]} addTypename={false}>
-        <Episodes />
-      </MockedProvider>,
+    let result = renderer.create(
+      <MemoryRouter initialEntries={['/episodes']}>
+        <MockedProvider mocks={[mock]} addTypename={false}>
+          <Episodes />
+        </MockedProvider>
+      </MemoryRouter>,
     );
     await renderer.act(async () => {
       await wait(0);
     });
 
-    expect(result.toJSON()).toMatchSnapshot();
+    expect(result).toMatchSnapshot();
   });
 });
