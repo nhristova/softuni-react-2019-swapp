@@ -13,7 +13,7 @@
 # Specification Requirements
 
 - [Specs pdf](CourseProjectAssignment.pdf)
-- [ ] Fetch data from GraphQL server - partial :seedling:
+- [x] Fetch data from GraphQL server - partial :seedling: - only load more characters on episode page remains
 - [x] Sign in / sign out functionality - local schema, add token to request header
 - [x] Show login error message - when using an email other than demo@st6.io
 - [x] Route login
@@ -36,7 +36,7 @@
 - [ ] App is responsive - partial :seedling:
 - [ ] Swapp logo uses Star Wars font - done in static html, make it work in real page too :seedling:
 - [ ] Starship radar
-- [ ] Test coverage is :100: - :eyes: :x: :clock430:
+- [ ] Test coverage is :100: - partial :seedling: 74.07% Statements  75% Branches  55.56% Functions  74.07% Lines  
 - [x] Hooks on commit
 - [x] Continuous integration - CI on PR to master
 - [x] Continuous deployment - CI on merge to master
