@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Episodes component Renders error 1`] = `
+<div>
+  <p>
+    Error
+  </p>
+</div>
+`;
+
+exports[`Episodes component Renders loader  1`] = `
+<div>
+  <div>
+    Loading
+  </div>
+</div>
+`;
