@@ -6,7 +6,7 @@ exports[`LRCard component Load without crashing 1`] = `
 >
   <img
     className="lr-card-photo"
-    src="/no-image-darth.png"
+    src="no-image-darth.png"
   />
   <div
     className="lr-card-details"
