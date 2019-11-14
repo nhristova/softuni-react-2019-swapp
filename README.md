@@ -27,7 +27,7 @@
 - [x] Route starships/:starshipId
 - [x] Navbar links - episodes, characters, sign out
 - [x] Switch theme from login and navbar SWAPP logo
-- [ ] Store theme across sessions (on browser reload)
+- [x] Store theme across sessions (on browser reload) - used localStorage
 - [x] Sign in / sign out functionality - local schema, add token to request header
 - [x] Show login error message - when using an email other than demo@st6.io
 - [x] Change url upon navigation

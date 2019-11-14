@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component Renders without crashing 1`] = `
+Array [
+  <header
+    className="page-header"
+  >
+    <div
+      className="header-logo"
+      onClick={[Function]}
+    >
+      SWAPP
+    </div>
+    <nav
+      className="header-navigation"
+    >
+      <a
+        href="/episodes"
+        onClick={[Function]}
+      >
+        Episodes
+      </a>
+      <a
+        href="/characters"
+        onClick={[Function]}
+      >
+        Characters
+      </a>
+      <svg
+        className="logout-icon"
+        onClick={[Function]}
+        viewBox="13 15 70 70"
+      >
+        sign-out.svg
+      </svg>
+    </nav>
+  </header>,
+  <p>
+    Error
+  </p>,
+]
+`;
