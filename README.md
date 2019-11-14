@@ -31,8 +31,8 @@
 - [x] Sign in / sign out functionality - local schema, add token to request header
 - [x] Show login error message - when using an email other than demo@st6.io
 - [x] Change url upon navigation
-- [x] Styles match provided designs and colors - :seedling:
-- [x] App is responsive - partial :seedling:
+- [x] Styles match provided designs and colors 
+- [x] App is responsive 
 - [ ] Load 5 more characters on episode page
 - [x] Load 12 more characters on characters page :satisfied:
 - [x] Hide load more button when no more items
