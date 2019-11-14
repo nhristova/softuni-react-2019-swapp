@@ -13,21 +13,27 @@ export const AUTHENTICATED_QUERY = gql`
 
 /* istanbul ignore next*/
 export const Home = () => {
-  const { data } = useQuery(AUTHENTICATED_QUERY);
+  const { data, loading, error } = useQuery(AUTHENTICATED_QUERY);
 
-  let [theme, setTheme] = useState('light-theme');
+  const savedTheme = localStorage.getItem('theme');
+  let [theme, setTheme] = useState(savedTheme || 'light-theme');
 
   const toggleTheme = () => {
     const newTheme = theme === 'light-theme' ? 'dark-theme' : 'light-theme';
+    localStorage.setItem('theme', newTheme);
     setTheme(newTheme);
   };
 
   useEffect(() => {
-    // TODO: Get theme from cookie? Use Context to store theme
     document.body.classList = theme;
   }, [theme]);
 
-  return data.authenticated ? (
+  if (loading) return <div>Loading</div>;
+  if (error) return <p>Error</p>;
+
+  const newData = data;
+
+  return newData.authenticated ? (
     <Routes toggleTheme={toggleTheme} />
   ) : (
     <>

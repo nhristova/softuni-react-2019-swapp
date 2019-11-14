@@ -1,11 +1,14 @@
 /* @font-face kit by Fonts2u (https://fonts2u.com) */
-/* 
+
 @font-face {
-  font-family: "starwars-regular";
-  src: url("STARWARS.eot?") format("eot"), url("STARWARS.woff") format("woff"), url("STARWARS.ttf") format("truetype"), url("STARWARS.svg#STARWARS") format("svg");
+  font-family: 'starwars-regular';
+  src: url('./assets/STARWARS.eot?') format('eot'),
+    url('./assets/STARWARS.woff') format('woff'),
+    url('./assets/STARWARS.TTF') format('truetype'),
+    url('./assets/STARWARS.svg#STARWARS') format('svg');
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 :root {
   /* Palette colors */
@@ -93,8 +96,12 @@ body {
 }
 
 a {
-  color: var(--default-font-color);
+  color: var(--highlight-color);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--logo-font-color);
 }
 
 .page-header {
@@ -119,7 +126,7 @@ a {
   align-self: center;
 }
 
-.header-navigation span {
+.header-navigation a {
   padding: 5px;
   vertical-align: middle;
 }
@@ -143,7 +150,6 @@ a {
 
 .heading-starwars {
   font-family: 'starwars-regular';
-  font-weight: bold;
 }
 
 .text-highlight {
@@ -200,26 +206,30 @@ a {
 }
 
 /* Card TB */
-a {
-  color: var(--button-outline-font-color);
-}
-
-span.logout-icon {
+.logout-icon {
   color: var(--button-outline-font-color);
   background-color: var(--button-outline-background);
   border-radius: 2px;
   border: 1px solid var(--button-outline-border-color);
   padding: 2px;
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+.logout-icon:hover {
+  background-color: var(--logo-font-color);
+  border-color: var(--app-bar-font-color);
 }
 
 .episodes-main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .episode-card {
-  flex-basis: 25%;
+  flex-basis: 80%;
 }
 
 /* TB Card */
@@ -235,7 +245,6 @@ span.logout-icon {
 
 .tb-card-photo img {
   object-fit: cover;
-  height: var(--card-img-width);
   width: 100%;
 }
 
@@ -253,12 +262,6 @@ span.logout-icon {
 
 .tb-card-details {
   padding: 10px;
-}
-
-@media screen and (max-width: 480px) {
-  .tb-card {
-    flex-basis: 80%;
-  }
 }
 
 /* Card LR */
@@ -348,14 +351,15 @@ span.logout-icon {
   --card-img-width: 80px;
   --card-title-font-size: 1.3em;
   --card-subtitle-font-size: 1em;
-  max-width: 32%;
+  width: 100%;
 }
 
 .big-lr-card {
-  --card-img-width: 25vw;
+  --card-img-width: 100%;
   --card-title-font-size: 2em;
   --card-subtitle-font-size: 1.6em;
   max-width: 100%;
+  flex-direction: column;
 }
 
 .lr-card {
@@ -363,7 +367,7 @@ span.logout-icon {
   border: 1px solid var(--card-border-color);
   border-radius: 5px;
   display: flex;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   margin-bottom: 10px;
 }
 
@@ -391,14 +395,8 @@ span.logout-icon {
 }
 
 @media screen and (max-width: 530px) {
-  .big-lr-card .lr-card-photo {
-    height: initial;
-  }
   .episode-main {
     width: 90vw;
-  }
-  .small-lr-card {
-    max-width: 100%;
   }
   .page-content {
     flex-direction: column;
@@ -408,41 +406,53 @@ span.logout-icon {
 @media screen and (min-width: 531px) and (max-width: 790px) {
   .episode-main,
   .starship-main,
-  .character-main {
+  .character-main,
+  .episodes-main,
+  .characters-main {
     width: 90vw;
   }
   .small-lr-card {
-    max-width: 45%;
+    width: 45%;
+  }
+  .episode-card {
+    flex-basis: 40%;
   }
   .page-content {
     flex-direction: column;
   }
   .big-lr-card {
-    --card-img-width: 100%;
+    --card-img-width: 200px;
+    flex-direction: row;
   }
 }
 
 @media screen and (min-width: 791px) {
   .episode-main,
   .starship-main,
-  .character-main {
+  .character-main,
+  .episodes-main,
+  .characters-main {
     width: 75vw;
+    max-width: 800px;
   }
   .big-lr-card {
-    --card-img-width: 40vw;
+    --card-img-width: 300px;
+    flex-direction: row;
   }
-  .lr-card-photo {
-    max-height: 200px;
+  .small-lr-card {
+    width: 30%;
+  }
+  .episode-card {
+    flex-basis: 25%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .episode-main,
   .starship-main,
-  .character-main {
-    width: 800px;
-  }
-  .big-lr-card {
-    --card-img-width: 300px;
+  .character-main,
+  .episodes-main,
+  .characters-main {
+    max-width: 800px;
   }
 }

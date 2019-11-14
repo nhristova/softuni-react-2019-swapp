@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useApolloClient } from '@apollo/react-hooks';
+
+import { ReactComponent as SignOut } from '../assets/sign-out.svg';
 export const Header = props => {
   const client = useApolloClient();
 
@@ -17,9 +19,11 @@ export const Header = props => {
       <nav className="header-navigation">
         <Link to="/episodes">Episodes</Link>
         <Link to="/characters">Characters</Link>
-        <span className="logout-icon" onClick={handleSignOut}>
-          ➡
-        </span>
+        <SignOut
+          viewBox="13 15 70 70"
+          className="logout-icon"
+          onClick={handleSignOut}
+        />
       </nav>
     </header>
   );

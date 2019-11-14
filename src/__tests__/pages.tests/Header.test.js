@@ -6,12 +6,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe('Header component', () => {
   it('Renders without crashing', () => {
-    renderer.create(
+    const result = renderer.create(
       <MockedProvider mocks={[]}>
         <BrowserRouter>
           <Header />
         </BrowserRouter>
       </MockedProvider>,
     );
+    expect(result).toMatchSnapshot();
   });
 });

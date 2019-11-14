@@ -6,7 +6,7 @@ exports[`LRCard component Load without crashing 1`] = `
 >
   <img
     className="lr-card-photo"
-    src="/no-image-darth.png"
+    src="no-image-darth.png"
   />
   <div
     className="lr-card-details"
@@ -15,7 +15,7 @@ exports[`LRCard component Load without crashing 1`] = `
       className="lr-card-title"
     >
       <a
-        className="heading-starwars text-highlight "
+        className="heading-starwars"
         href="//undefined"
         onClick={[Function]}
       />

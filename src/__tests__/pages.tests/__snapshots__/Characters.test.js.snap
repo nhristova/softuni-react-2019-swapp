@@ -22,7 +22,7 @@ exports[`Characters component Renders mock data 1`] = `
           className="lr-card-title"
         >
           <a
-            className="heading-starwars text-highlight "
+            className="heading-starwars"
             href="/characters/people.1"
             onClick={[Function]}
           >

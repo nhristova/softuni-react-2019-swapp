@@ -25,7 +25,7 @@ exports[`Character page Loads mock data 1`] = `
       >
         <img
           alt="Quarsh Panaka"
-          src="/no-image-darth.png"
+          src="no-image-darth.png"
         />
       </div>
       <div

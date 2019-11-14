@@ -152,3 +152,63 @@ a {
 .text-highlight-2 {
     color: var(--subtitle-font-color);
 }
+
+
+@media screen and (max-width: 530px) {
+  .big-lr-card .lr-card-photo {
+    height: initial;
+  }
+  .episode-main {
+    width: 90vw;
+  }
+  .small-lr-card {
+    max-width: 100%;
+  }
+  .page-content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 531px) and (max-width: 790px) {
+  .episode-main,
+  .starship-main,
+  .character-main {
+    width: 90vw;
+  }
+  .small-lr-card {
+    max-width: 45%;
+  }
+  .page-content {
+    flex-direction: column;
+  }
+  .big-lr-card {
+    --card-img-width: 100%;
+  }
+}
+
+@media screen and (min-width: 791px) {
+  .episode-main,
+  .starship-main,
+  .character-main {
+    width: 75vw;
+  }
+  .big-lr-card {
+    --card-img-width: 40vw;
+  }
+  .lr-card-photo {
+    max-height: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .episode-main,
+  .starship-main,
+  .character-main,
+  .episodes-main,
+  .characters-main {
+    max-width: 800px;
+  }
+  .big-lr-card {
+    --card-img-width: 300px;
+  }
+}

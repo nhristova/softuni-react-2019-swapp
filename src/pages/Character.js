@@ -4,6 +4,8 @@ import { useQuery } from '@apollo/react-hooks';
 import { Detail, LRCard } from '../Components';
 import { useParams } from 'react-router-dom';
 
+import noImage from '../assets/no-image-darth.png';
+
 export const CHARACTER_QUERY = gql`
   query($characterId: ID!) {
     person(id: $characterId) {
@@ -44,7 +46,7 @@ export const Character = props => {
   if (error) return <p>Error</p>;
 
   const { person } = data;
-  const image = person.image || '/no-image-darth.png';
+  const image = person.image || noImage;
 
   return (
     <main className="character-main">
