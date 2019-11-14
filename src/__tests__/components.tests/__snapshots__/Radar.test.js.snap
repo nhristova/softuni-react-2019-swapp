@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes component Load without crashing 1`] = `
+<div>
+  Loading
+</div>
+`;
+
+exports[`Routes component Load without crashing 2`] = `
+<p>
+  Error
+</p>
+`;

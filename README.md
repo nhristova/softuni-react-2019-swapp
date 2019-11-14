@@ -13,7 +13,7 @@
 # Specification Requirements
 
 - [Specs pdf](CourseProjectAssignment.pdf)
-- [x] Fetch data from GraphQL server - partial :seedling: - only load more characters on episode page remains
+- [x] Fetch data from GraphQL server - partial 
 - [x] All routes except login are authorized
 - [x] Redirect to /login if not authorized 
 - [x] Redirect to episodes from / - default page
@@ -37,14 +37,15 @@
 - [x] Load 12 more characters on characters page :satisfied:
 - [x] Hide load more button when no more items
 - [x] Swapp logo uses Star Wars font 
-- [ ] Starship radar
-- [ ] Test coverage is :100: - partial :seedling: 74.07% Statements  75% Branches  55.56% Functions  74.07% Lines  
+- [x] Starship radar
+- [ ] Test coverage is :100: - partial :seedling: 75% Statements  66% Branches  60% Functions  75% Lines  
 - [x] Hooks on commit
 - [x] Continuous integration - CI on PR to master
 - [x] Continuous deployment - CI on merge to master
 
 ## Additional
 - [x] Handle epired token - Redirect to login page. Works on (re)load of page, not when switching between links inside :purple_heart: :sunglasses:
+- [x] Custom icon for mobile desktop & Chrome tab
 
 ## Notes
 - [x] Load configs from .env file - Prefix name with REACT_APP!! (won't load otherwise)

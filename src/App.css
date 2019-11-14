@@ -60,6 +60,7 @@ body.light-theme {
   --subtitle-font-color: var(--default-font-color);
   --radar-background-color: var(--element0);
   --radar-grid: var(--element3);
+  --radar-fill: var(--highlight1);
 }
 
 body.dark-theme {
@@ -83,6 +84,7 @@ body.dark-theme {
   --subtitle-font-color: var(--highlight2);
   --radar-background-color: var(--element0);
   --radar-grid: var(--element1);
+  --radar-fill: var(--highlight2);
 }
 
 body {
@@ -392,6 +394,29 @@ a:hover {
 .lr-card-subtitle {
   font-size: var(--card-subtitle-font-size);
   font-weight: bolder;
+}
+
+/* Starship radar chart */
+
+.starship-radar-chart {
+  background-color: var(--radar-background-color);
+}
+
+.scale {
+  fill: var(--radar-background-color);
+  stroke: var(--radar-grid);
+  stroke-width: 1px;
+}
+
+.caption {
+  fill: var(--heading-main-font-color);
+  font-weight: 400;
+  text-shadow: none;
+}
+
+.shape {
+  fill: var(--radar-fill);
+  stroke: var(--radar-fill);
 }
 
 @media screen and (max-width: 530px) {

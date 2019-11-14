@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
-import { Detail } from '../Components';
+import { Detail, Radar } from '../Components';
 import { useParams } from 'react-router';
 
 export const STARSHIP_QUERY = gql`
@@ -68,7 +68,7 @@ export const Starship = props => {
           <div className="column-title heading-starwars text-highlight2 page-title-3">
             Compared to starship class max
           </div>
-          <img src="./imgs/radar.jpg" alt="Radar chart of capabilitis" />
+          <Radar starship={starship} />
         </div>
       </div>
     </main>
