@@ -1,44 +1,42 @@
 .login-modal {
-    background-color: var(--login-modal-background-color);
-    padding: 15px;
-    margin: 50px;
+  background-color: var(--login-modal-background-color);
+  padding: 15px;
+  max-width: 500px;
+  margin: 50px auto;
 }
-
 .login-heading {
-    font-family: 'starwars-regular';
-    font-size: 5em;
-    color: var(--logo-font-color);
-    text-align: center;
-    margin: 0;
-    padding: 10px;
+  font-family: 'starwars-regular';
+  font-size: 5em;
+  color: var(--logo-font-color);
+  text-align: center;
+  margin: 0;
+  padding: 10px;
 }
 
 .login-card {
-    border-radius: 5px;
-    background-color: var(--card-background-color);
-    padding: 5px 15% 5px 15%;
-    display: flex;
-    flex-direction: column;
+  border-radius: 5px;
+  background-color: var(--card-background-color);
+  padding: 5px 15% 5px 15%;
+  display: flex;
+  flex-direction: column;
 }
 
 .login-error-message {
-    color: var(--error-font-color);
-    font-size: 0.8em;
-    margin: 10px 10px 5px 10px;
+  color: var(--error-font-color);
+  font-size: 0.8em;
+  margin: 10px 10px 5px 10px;
 }
 
 .login-input {
-    border: 1px solid var(--input-border-color);
-    border-radius: 5px;
-    ;
-    background-color: var(--input-background-color);
-    color: var(--input-font-color);
-    display: block;
-    margin: 10px;
-    padding: 8px 15px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  background-color: var(--input-background-color);
+  color: var(--input-font-color);
+  display: block;
+  margin: 10px;
+  padding: 8px 15px;
 }
 
 .login-card button {
-    align-self: flex-end;
+  align-self: flex-end;
 }
-

@@ -11,10 +11,7 @@ export const LRCard = props => {
       <img className="lr-card-photo" src={image} alt={item.name} />
       <div className="lr-card-details">
         <div className="lr-card-title">
-          <Link
-            to={`/${props.page}/${item.id}`}
-            className="heading-starwars text-highlight "
-          >
+          <Link to={`/${props.page}/${item.id}`} className="heading-starwars">
             {item.name}
           </Link>
         </div>

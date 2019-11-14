@@ -23,11 +23,12 @@ exports[`Routes component Load without crashing 1`] = `
       >
         Characters
       </a>
-      <span
+      <svg
         class="logout-icon"
+        viewBox="13 15 70 70"
       >
-        ➡
-      </span>
+        sign-out.svg
+      </svg>
     </nav>
   </header>
   <div>

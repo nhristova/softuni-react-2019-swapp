@@ -15,7 +15,7 @@ exports[`LRCard component Load without crashing 1`] = `
       className="lr-card-title"
     >
       <a
-        className="heading-starwars text-highlight "
+        className="heading-starwars"
         href="//undefined"
         onClick={[Function]}
       />

@@ -1,181 +1,127 @@
 /* Episode profile page */
 
 .episode-main {
-    width: 80vw;
-    margin: 20px auto;
+  width: 80vw;
+  margin: 20px auto;
 }
 
 .episode-details {
-    background-color: var(--card-background-color);
-    border-radius: 5px;
-    margin: 20px 0;
-    padding: 15px;
+  background-color: var(--card-background-color);
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 15px;
 }
-
 
 /* Characters list page */
 
 .characters-main {
-    width: 95vw;
-    margin: 20px auto;
+  width: 95vw;
+  margin: 20px auto;
 }
 
 .characters-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-
 
 /* Character profile page */
 
-.character-main, .starship-main {
-    width: 90vw;
-    margin: 0 auto;
+.character-main,
+.starship-main {
+  width: 90vw;
+  margin: 0 auto;
 }
 
 .page-title {
-    text-align: center;
-    border-bottom: 1pt solid var(--app-bar-background-color);
-    margin:10px;
-    padding: 20px;
+  text-align: center;
+  border-bottom: 1pt solid var(--app-bar-background-color);
+  margin: 10px;
+  padding: 20px;
 }
 
 .page-title-1 {
-    font-size: 2em;
+  font-size: 2em;
 }
-.page-title-2 {    
-    font-size: 1.6em;
+.page-title-2 {
+  font-size: 1.6em;
 }
 .page-title-3 {
-    font-size: 1.4em;
+  font-size: 1.4em;
 }
 
 .page-content {
-    display: flex;
+  display: flex;
 }
 .page-column-half {
-    flex: 0 0 50%;
-    padding: 0 15px;
+  flex: 0 0 50%;
+  padding: 0 15px;
 }
 
 .page-column-half .tb-card-title {
-    text-align: center;
+  text-align: center;
 }
 
 /* Starship page */
 
 .column-title.heading-starwars {
-    text-align: center;
-    border-bottom: 1pt solid var(--subtitle-font-color);
-    padding-bottom: 10px;
-    margin: 35px 0 15px 0;
+  text-align: center;
+  border-bottom: 1pt solid var(--subtitle-font-color);
+  padding-bottom: 10px;
+  margin: 35px 0 15px 0;
 }
-
-
 
 /* LR Card */
 
 .tiny-lr-card {
-    --card-img-width: 60px;
-    --card-title-font-size: 1.3em;
-    --card-subtitle-font-size: 1em;
-    max-width: 100%;
+  --card-img-width: 60px;
+  --card-title-font-size: 1.3em;
+  --card-subtitle-font-size: 1em;
+  max-width: 100%;
 }
 
 .small-lr-card {
-    --card-img-width: 80px;
-    --card-title-font-size: 1.3em;
-    --card-subtitle-font-size: 1em;
-    max-width: 32%;
+  --card-img-width: 80px;
+  --card-title-font-size: 1.3em;
+  --card-subtitle-font-size: 1em;
+  max-width: 32%;
 }
 
 .big-lr-card {
-    --card-img-width: 25vw;
-    --card-title-font-size: 2em;
-    --card-subtitle-font-size: 1.6em;
-    max-width: 100%;
+  --card-img-width: 25vw;
+  --card-title-font-size: 2em;
+  --card-subtitle-font-size: 1.6em;
+  max-width: 100%;
 }
 
 .lr-card {
-    background-color: var(--card-background-color);
-    border: 1px solid var(--card-border-color);
-    border-radius: 5px;
-    display: flex;
-    flex-grow: 1;
-    margin-bottom: 10px;
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 5px;
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: 10px;
 }
 
 .lr-card-photo {
-    border-radius: 5px 0 0 5px;
-    object-fit: cover;
-    height: var(--card-img-width);
-    width: var(--card-img-width);
+  border-radius: 5px 0 0 5px;
+  object-fit: cover;
+  height: var(--card-img-width);
+  width: var(--card-img-width);
 }
 
 .lr-card-details {
-    padding: 15px 20px;
-    align-self: center;
-    margin: auto;
-    text-align: center;
+  padding: 15px 20px;
+  align-self: center;
+  margin: auto;
+  text-align: center;
 }
 
 .lr-card-title {
-    font-size: var(--card-title-font-size);
+  font-size: var(--card-title-font-size);
 }
 
 .lr-card-subtitle {
-    font-size: var(--card-subtitle-font-size);
-    font-weight: bolder;
-}
-
-@media screen and (max-width: 530px) {
-    .big-lr-card .lr-card-photo {
-        height: initial;
-    }
-    .episode-main {
-        width: 90vw;
-    }
-    .small-lr-card {
-        max-width: 100%;
-    }
-    .page-content {
-        flex-direction: column;
-    }
-}
-
-@media screen and (min-width: 531px) and (max-width: 790px) {
-    .episode-main, .starship-main, .character-main {
-        width: 90vw;
-    }
-    .small-lr-card {
-        max-width: 45%;
-    }
-    .page-content {
-        flex-direction: column;
-    }
-    .big-lr-card {
-        --card-img-width: 100%;
-    }
-}
-
-@media screen and (min-width: 791px) {
-    .episode-main, .starship-main, .character-main {
-        width: 75vw;
-    }
-    .big-lr-card {
-        --card-img-width: 40vw;
-    }
-    .lr-card-photo {
-        max-height: 200px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .episode-main, .starship-main, .character-main {
-        width: 800px;
-    }
-    .big-lr-card {
-        --card-img-width: 300px;
-    }
+  font-size: var(--card-subtitle-font-size);
+  font-weight: bolder;
 }

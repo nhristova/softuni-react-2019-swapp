@@ -31,12 +31,12 @@
 - [x] Sign in / sign out functionality - local schema, add token to request header
 - [x] Show login error message - when using an email other than demo@st6.io
 - [x] Change url upon navigation
-- [ ] Styles match provided designs and colors - partial :seedling:
-- [ ] App is responsive - partial :seedling:
+- [x] Styles match provided designs and colors - :seedling:
+- [x] App is responsive - partial :seedling:
 - [ ] Load 5 more characters on episode page
 - [x] Load 12 more characters on characters page :satisfied:
 - [x] Hide load more button when no more items
-- [ ] Swapp logo uses Star Wars font - done in static html, make it work in real page too :seedling:
+- [x] Swapp logo uses Star Wars font 
 - [ ] Starship radar
 - [ ] Test coverage is :100: - partial :seedling: 74.07% Statements  75% Branches  55.56% Functions  74.07% Lines  
 - [x] Hooks on commit
