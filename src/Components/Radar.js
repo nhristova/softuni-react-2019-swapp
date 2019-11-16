@@ -21,40 +21,10 @@ export const STARSHIP_CLASS_QUERY = gql`
   }
 `;
 
-const getMax = (first, second) => {
-  if (first > second) {
-    return first;
-  }
-  return second;
-};
-
-const maxValues = {
-  cost: 0,
-  maxAtmosphericSpeed: 0,
-  maxMLPerHour: 0,
-  hyperdriveRating: 0,
-  crew: 0,
-};
-
-const chartCaptions = {
-  cost: 'Cost',
-  maxAtmosphericSpeed: 'Max Atm. Speed',
-  maxMLPerHour: 'Max ML/h',
-  hyperdriveRating: 'HyperD Rat.',
-  crew: 'Crew',
-};
-
-const options = {
-  size: 400,
-  scales: 5,
-  axes: false,
-  dots: true,
-};
-
 export const Radar = props => {
   const starship = props.starship;
   const { data, loading, error } = useQuery(STARSHIP_CLASS_QUERY, {
-    variables: { type: starship.starshipClass },
+    variables: { shipType: starship.starshipClass },
   });
 
   if (loading) return <div>Loading</div>;
@@ -62,34 +32,21 @@ export const Radar = props => {
 
   const { allStarships } = data;
 
-  allStarships.edges.forEach(el => {
-    maxValues.cost = getMax(el.node.cost, maxValues.cost);
-    maxValues.maxAtmosphericSpeed = getMax(
-      el.node.maxAtmosphericSpeed,
-      maxValues.maxAtmosphericSpeed,
-    );
-    maxValues.maxMLPerHour = getMax(
-      el.node.maxMLPerHour,
-      maxValues.maxMLPerHour,
-    );
-    maxValues.hyperdriveRating = getMax(
-      el.node.hyperdriveRating,
-      maxValues.hyperdriveRating,
-    );
-    maxValues.crew = getMax(el.node.crew, maxValues.crew);
-  });
+  const chartCaptions = {
+    cost: 'Cost',
+    maxAtmosphericSpeed: 'Max Atm. Speed',
+    maxMLPerHour: 'Max ML/h',
+    hyperdriveRating: 'HyperD Rat.',
+    crew: 'Crew',
+  };
+
+  const maxValues = getMaxStats(allStarships.edges);
+  const stats = getShipStats(starship, maxValues);
+  removeEmptyEntries(stats, chartCaptions);
 
   const chartData = [
     {
-      data: {
-        cost: starship.cost / maxValues.cost,
-        maxAtmosphericSpeed:
-          starship.maxAtmosphericSpeed / maxValues.maxAtmosphericSpeed,
-        maxMLPerHour: starship.maxMLPerHour / maxValues.maxMLPerHour,
-        hyperdriveRating:
-          starship.hyperdriveRating / maxValues.hyperdriveRating,
-        crew: starship.crew / maxValues.crew,
-      },
+      data: stats,
       meta: { color: '#4bd5ee' },
     },
   ];
@@ -104,4 +61,63 @@ export const Radar = props => {
       />
     </div>
   );
+};
+
+/* 
+Helper functions, move to another file
+*/
+
+const getMax = (first, second) => {
+  return first > second ? first : second;
+};
+
+const getMaxStats = ships => {
+  const mv = {
+    cost: 0,
+    maxAtmosphericSpeed: 0,
+    maxMLPerHour: 0,
+    hyperdriveRating: 0,
+    crew: 0,
+  };
+
+  ships.forEach(sh => {
+    mv.cost = getMax(sh.node.cost, mv.cost);
+    mv.maxAtmosphericSpeed = getMax(
+      sh.node.maxAtmosphericSpeed,
+      mv.maxAtmosphericSpeed,
+    );
+    mv.maxMLPerHour = getMax(sh.node.maxMLPerHour, mv.maxMLPerHour);
+    mv.hyperdriveRating = getMax(sh.node.hyperdriveRating, mv.hyperdriveRating);
+    mv.crew = getMax(sh.node.crew, mv.crew);
+  });
+
+  return mv;
+};
+
+const getShipStats = (ship, max) => {
+  const result = {};
+  ship.cost = ship.cost || 0;
+
+  Object.keys(max).map(key => {
+    const value = ship[key] !== null ? ship[key] : NaN;
+    result[key] = value === 0 ? value : value / max[key];
+    return value;
+  });
+
+  return result;
+};
+
+const removeEmptyEntries = (data, captions) => {
+  Object.keys(data).forEach(key => {
+    if (data[key] === null || isNaN(data[key])) {
+      delete data[key];
+      delete captions[key];
+    }
+  });
+};
+
+const options = {
+  scales: 5,
+  axes: false,
+  dots: true,
 };

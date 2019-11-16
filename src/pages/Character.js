@@ -64,8 +64,14 @@ export const Character = props => {
           <div className="tb-card-details">
             <Detail type="Height" value={person.height} />
             <Detail type="Weight" value={person.mass} />
-            <Detail type="Species" value={person.species.name} />
-            <Detail type="Home World" value={person.homeworld.name} />
+            <Detail
+              type="Species"
+              value={person.species && person.species.name}
+            />
+            <Detail
+              type="Home World"
+              value={person.homeworld && person.homeworld.name}
+            />
           </div>
         </div>
         <div className="page-column-half starhips-list">

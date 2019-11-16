@@ -14,7 +14,6 @@ export const LoginForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(`Calling signIn`);
     props.signIn({ variables: { email: emailVal, password: passwordVal } });
   };
 

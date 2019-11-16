@@ -419,6 +419,11 @@ a:hover {
   stroke: var(--radar-fill);
 }
 
+.starship-radar-chart svg {
+  height: 100%;
+  width: 100%;
+}
+
 @media screen and (max-width: 530px) {
   .episode-main {
     width: 90vw;
