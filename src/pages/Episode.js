@@ -32,7 +32,7 @@ export const EPISODE_QUERY = gql`
 
 export const Episode = props => {
   const { episodeId } = useParams();
-  const { data, loading, error } = useQuery(EPISODE_QUERY, {
+  const { data, loading, error, fetchMore } = useQuery(EPISODE_QUERY, {
     variables: {
       episodeId: episodeId,
       perPage: 5,
@@ -44,31 +44,29 @@ export const Episode = props => {
 
   const { episode } = data;
 
-  // const loadMore = () => {
-  //   fetchMore({
-  //     variables: {
-  //       perPage: 2,
-  //       after: episode.people.pageInfo.endCursor
-  //     },
-  //     updateQuery: (prev, { fetchMoreResult: { episode: episodeNew } }) => {
-  //       return {
-  //         episode: {
-  //           ...episodeNew,
-  //           people: {
-  //             t
-  //             pageInfo: {
-  //               ...episodeNew.people.pageInfo
-  //             },
-  //             edges: [
-  //               ...prev.episode.people.edges,
-  //               ...episodeNew.people.edges
-  //             ]
-  //           }
-  //         }
-  //       }
-  //     }
-  //   })
-  // }
+  const loadMore = () => {
+    fetchMore({
+      variables: {
+        after: episode.people.pageInfo.endCursor,
+      },
+      updateQuery: (prev, { fetchMoreResult: { episode: episodeNew } }) => {
+        return {
+          episode: {
+            ...episodeNew,
+            people: {
+              pageInfo: {
+                ...episodeNew.people.pageInfo,
+                __typename: 'PageInfo',
+              },
+              edges: [...prev.episode.people.edges, ...episodeNew.people.edges],
+              __typename: 'PeopleConnection',
+            },
+            __typename: 'Episode',
+          },
+        };
+      },
+    });
+  };
 
   return (
     <main className="episode-main">
@@ -106,7 +104,7 @@ export const Episode = props => {
         ))}
       </div>
       {episode.people.pageInfo.hasNextPage && (
-        <button className="load-more-button" onClick={() => {}}>
+        <button className="load-more-button" onClick={loadMore}>
           Load more
         </button>
       )}

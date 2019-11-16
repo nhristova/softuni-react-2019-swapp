@@ -13,7 +13,7 @@
 # Specification Requirements
 
 - [Specs pdf](CourseProjectAssignment.pdf)
-- [x] Fetch data from GraphQL server - partial 
+- [x] Fetch data from GraphQL server
 - [x] All routes except login are authorized
 - [x] Redirect to /login if not authorized 
 - [x] Redirect to episodes from / - default page
@@ -33,7 +33,7 @@
 - [x] Change url upon navigation
 - [x] Styles match provided designs and colors 
 - [x] App is responsive 
-- [ ] Load 5 more characters on episode page
+- [x] Load 5 more characters on episode page
 - [x] Load 12 more characters on characters page :satisfied:
 - [x] Hide load more button when no more items
 - [x] Swapp logo uses Star Wars font 
@@ -46,6 +46,7 @@
 ## Additional
 - [x] Handle epired token - Redirect to login page. Works on (re)load of page, not when switching between links inside :purple_heart: :sunglasses:
 - [x] Custom icon for mobile desktop & Chrome tab
+- [x] Replace missing character / starship photo with generic image
 
 ## Notes
 - [x] Load configs from .env file - Prefix name with REACT_APP!! (won't load otherwise)
