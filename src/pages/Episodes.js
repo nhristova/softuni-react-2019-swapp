@@ -3,6 +3,7 @@ import gql from 'graphql-tag.macro';
 import { useQuery } from '@apollo/react-hooks';
 import { TBCardEpisode } from '../Components/TBCardEpisode';
 
+// TODO: Extract queries to separate folder
 export const EPISODES_QUERY = gql`
   query {
     allEpisodes(first: 100) {

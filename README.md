@@ -38,7 +38,7 @@
 - [x] Hide load more button when no more items
 - [x] Swapp logo uses Star Wars font 
 - [x] Starship radar
-- [ ] Test coverage is :100: - partial :seedling: 75% Statements  66% Branches  60% Functions  75% Lines  
+- [ ] Test coverage is :100: - partial :seedling: 67.11% Statements 56.9% Branches 50% Functions 65.71% Lines
 - [x] Hooks on commit
 - [x] Continuous integration - CI on PR to master
 - [x] Continuous deployment - CI on merge to master
